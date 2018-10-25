@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>标签页</title>
+    <link rel="stylesheet" href="../../../../lib/layui/css/layui.css">
+
+	<link rel="stylesheet" href="./chooseLabel.css" />
+
+
+</head>
+<body style="width:100%;">
+	<div class="chooseLabel_box layui-form">
+        <div class="loading-box1" style="display: none"><img src="../../../../img/loading.gif" alt="加载中..."></div>
+        <div class="btn_group">
+            <button class="layui-btn layui-btn-danger" onclick="cancel()">取消</button>
+            <button class="layui-btn layui-btn-normal" lay-filter="saveLabel" lay-submit>保存</button>
+        </div>
+        <div class="chooseLabel_body">
+            <div class="data_list">
+                <!--<div class="layui-form-item">-->
+                    <!--<label class="layui-form-label">服务开发商：</label>-->
+                    <!--<div class="layui-input-block">-->
+                        <!--<input type="text" name="serDevCom" id="serDevCom" lay-verify="required" autocomplete="off" class="layui-input"  disabled="disabled">-->
+                    <!--</div>-->
+                <!--</div>-->
+                <div class="layui-form-item currentLabel">
+                    <div class="layui-form-label">依赖的服务：</div>
+                    <ul class="currLabel">
+                        
+                    </ul>
+                </div>
+                <div class="layui-form-item allrelyService layui-form" lay-filter="all_relyService_box">
+                    <div class="layui-form-label">全部服务：</div>
+                    <ul class="allRelySerItem layui-form" lay-filter="all_relyService"></ul>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</body>
+<script src="../../../../js/xhsdk.min.js"></script>
+<script src="../../../../lib/jquery/jquery.min.js"></script>
+<script src="../../../../lib/layui/layui.all.js"></script>
+<script src="../../../../js/commonUrl/commonUrl.js"></script>
+<script src="./chooseRelySer.js"></script>
+</html>

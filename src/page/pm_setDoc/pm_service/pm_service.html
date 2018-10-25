@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../../../lib/layui/css/layui.css">
+
+    <link rel="stylesheet" href="../../../font/iconfont.css">
+    <link rel="stylesheet" href="../../pChangeApplicationForm/font/iconfont.css">
+    <link rel="stylesheet" href="./../pm_setDoc.css">
+    <link rel="stylesheet" href="../pm_overview/pm_overview.css">
+    <title>微服务设计</title>
+</head>
+<body>
+
+<div class="pj-item-body pj-item  layui-form">
+    <div class="pj-item-header">
+        <div class="pj-item-header-left">
+            <p>微服务设计</p>
+
+        </div>
+    </div>
+    <hr class="layui-bg-gray">
+    <div class="secLevel">
+        <div class="deploy">
+            <p class="editTitle">服务名字</p>
+            <div class="layui-input-inline" style="width: 300px;margin-left: 7px;">
+                <input type="tel" name="phone" lay-verify="serviceName" disabled autocomplete="off" class="layui-input" id="serviceName" value="会议室预订">
+            </div>
+        </div>
+    </div>
+    <div class="secLevel">
+        <div class="pj-item-body-top ">
+            <div class="deploy">
+                <p class="editTitle">服务类型</p>
+                <div class="layui-input-inline option-left" style="width: 300px">
+                    <select name="quiz" id="service-option" disabled class="serviceType" lay-verify="serviceType">
+                        <!--<option value=""></option>-->
+                        <option value="1">基础技术服务</option>
+                        <option value="2">通用业务服务设计</option>
+                        <option value="3">应用服务设计</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="secLevel">
+        <div class="pj-item-body-top">
+            <p class="editTitle">服务设计</p>
+        </div>
+        <div class="pj-item-body-bottom" id="serviceDesign">
+            <!--<textarea class="layui-textarea serviceDesign" lay-verify="serviceDesign" placeholder="请输入服务设计"></textarea>-->
+            <p>
+                (1）查询逻辑
+                按照输入的条件查询会议室预订情况
+                （2）增删改逻辑
+                实现会议预订的新增、修改、删除功能；
+
+                （3）统计逻辑
+                无
+                （4）日志逻辑
+                无
+
+            </p>
+
+
+
+        </div>
+    </div>
+
+    <div class="secLevel">
+        <div class="pj-item-body-top">
+            <p class="editTitle">依赖的服务</p>
+
+            <div class="editOprate">
+                <div class="editCon">
+                    <!--<i class="iconfont icon-bianji"></i>-->
+                    <!--<span>编辑</span>-->
+                </div>
+            </div>
+        </div>
+
+        <div class="pj-item-body">
+
+            <div class="common">通用业务服务(多选)</div>
+            <!--<div style="max-width: 100%; margin: 20px;">-->
+                <!--<select xm-select="select-id" >-->
+
+                    <!--<option value="1">基础技术服务</option>-->
+                    <!--<option value="2">通用业务服务设计</option>-->
+                    <!--<option value="3">应用服务设计</option>-->
+                <!--</select>-->
+            <!--</div>-->
+            <div class="common_service business">
+
+                <ul>
+
+
+
+                        <li><span>技术服务</span></li>
+                        <li><span>基础服务</span></li>
+                        <li><span>通用服务</span></li>
+
+
+
+                </ul>
+
+                <!--<div class="addservice" >-->
+                    <!--<i class="iconfont icon-tianjia"></i>-->
+                <!--</div>-->
+            </div>
+            <div class="common">基础技术服务(多选)</div>
+            <div class="common_service technical">
+                <ul>
+                    <li><span>技术服务</span></li>
+                    <li><span>基础服务</span></li>
+                    <li><span>通用服务</span></li>
+                </ul>
+                <!--<div class="addservice">-->
+                    <!--<i class="iconfont icon-tianjia"></i>-->
+                <!--</div>-->
+            </div>
+        </div>
+
+
+    </div>
+    <!--部署环境和运行资源-->
+    <div class="secLevel">
+        <div class="pj-item-body-top">
+            <p class="editTitle">部署环境和运行资源</p>
+        </div>
+        <div class="deploy-edit">
+            <div class="pj-item-body-bottom">
+            <p>
+                （一）服务部署
+                PC Web应用和所有后台微服务均要求Docker部署。——所有服务、PC Web应用全Docker化。“Docker其最佳实践要求一个容器内部只有一个生命周期随时可以消亡的服务进程。”WEB端功能进行前后端分离发布，在Nginx下打包成Docker镜像并提供Dockerfile文件。镜像[WEB端应用前后端分离，并打包在镜像发布；]必须在本地测试成功后再推送到生产环境。
+                <br />（二）运行资源
+                所有的服务与应用，通过Docker部署，只需要打包成Docker镜像推给aPaaS平台。不需要再单独申请服务器资源。数据库，非结构化文件存储，只需要提出空间需求。给到aPaaS平台备案就可以了，让aPaaS平台事先预知，存量数据和增量数据，可能需要的空间。
+
+            </p>
+            </div>
+            <!--<div class="deploy-box-tip1">-->
+                <!--<div class="deploy">-->
+                    <!--<p class="common">部署环境</p>-->
+                    <!--<div class="option-box">-->
+                        <!---->
+                        <!--&lt;!&ndash;<select name="quiz" id="service" class="deploymentEnvironment" lay-verify="deploymentEnvironment">&ndash;&gt;-->
+                            <!--&lt;!&ndash;<option value=""></option>&ndash;&gt;-->
+                            <!--&lt;!&ndash;<option value="移动信息网">移动信息网</option>&ndash;&gt;-->
+                            <!--&lt;!&ndash;<option value="公安信息网">公安信息网</option>&ndash;&gt;-->
+                        <!--&lt;!&ndash;</select>&ndash;&gt;-->
+                    <!--</div>-->
+                <!--</div>-->
+                <!--<div class="deploy">-->
+                    <!--<p class="common">运行资源</p>-->
+                    <!--<div class="option-box">-->
+                        <!--&lt;!&ndash;<select name="quiz" id="service1" class="runResource" lay-verify="runResource">&ndash;&gt;-->
+                            <!--&lt;!&ndash;<option value=""></option>&ndash;&gt;-->
+                            <!--&lt;!&ndash;<option value="4G/6核">4G/6核</option>&ndash;&gt;-->
+                        <!--&lt;!&ndash;</select>&ndash;&gt;-->
+                    <!--</div>-->
+                <!--</div>-->
+
+            <!--</div>-->
+        </div>
+    </div>
+
+</div>
+<script src="../../../js/xhsdk.min.js"></script>
+<script src="../../../lib/jquery/jquery.min.js"></script>
+<script src="../../../lib/layui/layui.all.js"></script>
+<script src="../../../js/commonUrl/commonUrl.js"></script>
+<script src="../../../lib/formSelects/formSelects-v4.js"></script>
+<script src="pm_service.js"></script>
+</body>
+</html>

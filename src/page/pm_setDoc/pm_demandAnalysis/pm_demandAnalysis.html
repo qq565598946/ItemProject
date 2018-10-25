@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../../../lib/layui/css/layui.css">
+    <link rel="stylesheet" href="./../pm_setDoc.css">
+    <link rel="stylesheet" href="../pm_overview/pm_overview.css">
+    <title>需求分析</title>
+</head>
+<body>
+<div class="pj-item layui-form" id="pj-demandAnalysis">
+    <div class="pj-item-header">
+        <div class="pj-item-header-left">
+            <p>需求分析</p>
+            <!--<p>-->
+            <!--<i class="iconfont icon-bangzhu"></i>-->
+            <!--<span>帮助</span>-->
+            <!--</p>-->
+        </div>
+        <div class="pj-item-header-right">
+        </div>
+    </div>
+    <hr class="layui-bg-gray">
+    <div class="pj-item-body">
+        <div class="secLevel">
+            <div class="pj-item-body-top">
+                <p class="editTitle">功能角色分析</p>
+
+            </div>
+            <div class="pj-item-body-bottom" id="functionalRoleAnalysis">
+                <!--<textarea class="layui-textarea" lay-verify="RoleAnalysis" placeholder="请输入功能角色分析">-->
+                <!--</textarea>-->
+                <p>
+                    1、公车申请
+                    公车申请人：包括市局本部各部门在市局大院区域内及区局、各警种以及派出所民警等可以申请使用公务车。{carApply:{isApply:true}}
+                    公车申请审批人：包括市局直属各部门、警种对应的审批领导（三级以上单位领导的岗位职责）。{carApply:{isAudit:true}}
+                    <br /> 2、会议室预定
+                    会议室预定申请人：包括市局本部各部门在市局大院区域内及区局、各警种等可以申请使用使用会议室预定功能。{meetingRoom:{isApply:true}}
+                    会议室预定审批人：由市局警保部、区局各警种警保部相关民警负责审批（主要是警保部社会化服务监管科民警负责）。{meetingRoom:{isAudit:true}}
+
+                </p>
+
+
+            </div>
+        </div>
+        <div class="secLevel">
+            <div class="pj-item-body-top">
+                <p class="editTitle">业务需求</p>
+            </div>
+            <div class="pj-item-body-bottom" id="businessRequirements">
+                <!--<textarea class="layui-textarea" lay-verify="Requirements" placeholder="请输入业务需求"></textarea>-->
+                <p>
+                    1、市局业务需求分析
+                    <br />  1、公车申请
+                    依托警务云终端，实现民警随时、随地填写公车申请单、审核公车申请单功能，民警在申请通过后可以在APP首页或申请单详情查看到取车数字码或二维码，凭码去钥匙柜取车钥匙，以及归还车功能，通过这些功能实现公车申请的整个闭环工作。
+                    <br /> 2、会议室预定
+                    依托警务云终端，实现民警随时、随地填写会议室预定申请单功能，民警在申请后可以通过APP查看审批情况，同时可以掌握当前会议室的预定情况。
+                    <br />  2、分局业务需求分析
+                    会议室预定适用于分局民警，参照市局业务需求分析；
+                    公车申请适用于分局民警，参照市局业务需求分析；
+                    <br /> 3、派出所业务需求分析
+                    会议室预定适用于派出所民警，参照市局业务需求分析；
+                    公车申请适用于派出所民警，参照市局业务需求分析；
+                    <br /> 4、基层民警业务需求分析
+                    参照市局业务需求分析。会议室预定、公车申请，均不存在基层民警的差异化需求。
+                    <br /> 5、其他民警业务需求分析
+                    参照市局业务需求分析。会议室预定、公车申请，均不存在专业警种的差异化需求。
+                </p>
+
+
+            </div>
+        </div>
+        <div class="secLevel">
+            <div class="pj-item-body-top">
+                <p class="editTitle">数据资源整合</p>
+
+            </div>
+
+            <div class="pj-item-body-bottom" id="dataIntegration">
+                <!--<textarea class="layui-textarea" lay-verify="dataIntegration" placeholder="请输入数据资源整合">-->
+                        <!--数据资源整合-->
+                <!--</textarea>-->
+                <p>
+                    数据资源整合
+                </p>
+            </div>
+        </div>
+
+    </div>
+</div>
+<script src="../../../js/xhsdk.min.js"></script>
+<script src="../../../lib/jquery/jquery.min.js"></script>
+<script src="../../../lib/layui/layui.all.js"></script>
+<script src="../../../js/commonUrl/commonUrl.js"></script>
+<script src="pm_demandAnalysis.js"></script>
+</body>
+</html>

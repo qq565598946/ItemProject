@@ -1,0 +1,198 @@
+.box-norm {
+    height: 40px;
+    border: 1px solid #f3f3f3;
+    background: #fbfbfb;
+    line-height: 40px;
+    text-indent: 13px;
+    font-size: 16px;
+    color: #797979;
+}
+
+.box-download {
+    float: right;
+    margin-right: 30px;
+    cursor: pointer;
+}
+
+.projectProgramme_box .layui-col-md2>ul>li span i {
+    font-size: 12px;
+    margin-right: 8px;
+}
+.desname{
+    height: 63px;
+    line-height: 63px;
+    font-size: 18px;
+    color: #295596
+}
+.popUpbox,.audit-box-tip{
+    width: 100%;
+    height: 100%;
+    /*background-color: rgba(0, 0, 0, .5);*/
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+}
+
+.editContent {
+    width: 700px;
+    height: 350px;
+    background-color: #fff;
+    padding: 20px 30px;
+    position: absolute;
+    top: 50%;
+    left: 53%;
+    margin-left: -300px;
+    margin-top: -200px;
+    box-shadow: -3px 3px 40px 5px #ccc;
+}
+.editContent p {
+    border-bottom: 1px solid #CCCCCC;
+    height: 55px;
+}
+
+.btn-group {
+    text-align: right;
+}
+.box-content-audit{
+    margin-top: 20px;
+}
+
+.getDocData {
+    border:0;
+    width: 118px;
+    background: #437fd8;
+    color: #fff;
+}
+.cancelEditor{border: 0}
+
+.cancelEditor:hover{
+    color: #437fd8;
+}
+.layui-form-radio>i:hover, .layui-form-radioed>i {
+    color: #437fd8;
+}
+.center-box{
+    height: 100px;
+    margin-top: 15px;
+    margin-left: 8px;
+}
+.info-val{
+    border:0px;
+}
+
+.layui-form-label {
+    float: left;
+    display: block;
+    /*padding: 9px 15px;*/
+    /*width: 80px;*/
+    font-weight: 400;
+    line-height: 38px;
+    text-align: right;
+}
+
+.audit-cont {
+    color: red;
+    margin-left: 60px;
+    font-size: 14px;
+    display: none;
+}
+
+.opinion-box ul li .del-i{cursor: pointer}
+.opinion-box ul li {
+    width: 219px;
+    line-height: 30px;
+    position: relative;
+    background: #fff;
+    text-indent: 5px;
+    box-shadow: 0px 0px 9px 1px #ccc;
+    margin: 6px auto;
+    display: none;
+}
+.opinion-box ul li .del-i {
+    cursor: pointer;
+    position: absolute;
+    right: 12px;
+
+}
+
+.audit-box-tip .btn-group{
+    margin-top: 80px;
+}
+.app-list{
+    border-bottom: 1px dashed #C1C1C1;
+}
+#pj-deploy .item-box{display: flex;
+    flex-direction: column;
+}
+#table_box>div,.app-list{
+    position: relative;
+}
+.audit_opinion{
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 40px;
+    padding: 10px 20px;
+    border: 1px dashed #064B9F;
+    background: #F2F2F2;
+    text-align: center;
+    width: 150px;
+    z-index: 80;
+}
+.OpinionList>li{
+    line-height: 25px;
+}
+
+.OpinionList div {
+    text-align: left;
+    line-height: 20px;
+}
+.OpinionList li {
+    text-align: left;
+}
+
+.layui-form-item .layui-inline {
+    margin-bottom: 5px;
+    margin-right: -18px;
+}
+
+.icon-bitian:before{
+    color: red;
+    cursor: pointer;
+    position: absolute;
+    right: 70px;
+    font-size: 19px;
+    font-weight: 100;
+
+}
+
+.audit-i-box{
+    display: none;
+}
+
+
+.hj-box {
+    margin-top: 16px;
+    color: #696868;
+}
+
+.loading-box1{
+    width: 39px;
+    height: 39px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    margin-left: -19px;
+    margin-top: -19px;
+    z-index: 999;
+}
+
+#pj-staffvalue {
+    margin-bottom: 300px;
+}
+
+.staffvalue-box {
+    margin-left: 9px;
+    margin-top: 15px;
+}

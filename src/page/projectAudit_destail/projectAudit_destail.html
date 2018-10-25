@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>项目审核详情</title>
+    <link rel="stylesheet" type="text/css" href="../../lib/layui/css/layui.css"/>
+    <link rel="stylesheet" href="../../font/iconfont.css">
+    <link rel="stylesheet" href="../pChangeApplicationForm/font/iconfont.css">
+    <link rel="stylesheet" type="text/css" href="../../css/projectManage/projectManagement.css"/>
+    <link rel="stylesheet" type="text/css" href="../../page/pm_setDoc/style.css"/>
+
+    <link rel="stylesheet" href="../../lib/formSelects/formSelects-v4.css">
+    <link rel="stylesheet" type="text/css" href="projectAudit_destail.css"/>
+    <style>
+        .layui-form-item .layui-input-inline {
+            float: left;
+            width: 220px;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+<div class="projectApply">
+    <!--<div class="public_title">-->
+        <!--<div>项目管理</div>-->
+
+    <!--</div>-->
+    <input type="hidden" class="applyBy">
+    <input type="hidden" class="applyName">
+    <div class="layui-container" style="width: 100%;padding: 0px">
+        <div class="loading-box1" style="display: none"><img src="../../img/loading.gif" alt="加载中..."></div>
+        <div class="layui-row projectProgramme_box projectApply_box" style="background: #F1F1F1">
+            <div class="layui-col-md2">
+                <p class="itemDes desname">项目审核详情</p>
+                <ul class="ProgrammeList">
+                    <li class="layui-this"><span><i class="iconfont icon-xiangmuguanli"></i>项目实施方案审核</span></li>
+                    <div class="box-audit"></div>
+                        <!--<button class="layui-btn layui-btn-danger layui-btn-sm" style="width:100px" onclick="isagredd(3)">不同意</button>-->
+                        <!--<button class="layui-btn layui-btn-sm" style="width:100px;background-color:#295596;" onclick="isagredd(2)">同意</button></div>-->
+                </ul>
+                <!--所有审核意见-->
+                <div class="opinion-box">
+                        <ul>
+                                <li>项目概述意见:<span></span><i class="iconfont icon-icon del-i"></i></li>
+                                <li>需求分析意见:<span></span><i class="iconfont icon-icon del-i"></i></li>
+                                <li>架构设计意见:<span></span><i class="iconfont icon-icon del-i"></i></li>
+                                <li>开发规范意见:<span></span><i class="iconfont icon-icon del-i"></i></li>
+                                <li>应用设计意见:<span></span><i class="iconfont icon-icon del-i"></i></li>
+                                <li>微服务设计意见:<span></span><i class="iconfont icon-icon del-i"></i></li>
+                                <li>服务部署与运行资源意见:<span></span><i class="iconfont icon-icon del-i"></i></li>
+                                <li>风险解决方案意见:<span></span><i class="iconfont icon-icon del-i"></i></li>
+                                <li>已分配开发人员意见:<span></span><i class="iconfont icon-icon del-i"></i></li>
+                        </ul>
+                </div>
+            </div>
+            <div class="layui-col-md10">
+                <!--模块审批意见-->
+                <div class="popUpbox" style="display:none;">
+
+                </div>
+                <!--总体审核意见-->
+                <div class="audit-box-tip" style="display:none;" >
+                    <div class="editContent">
+                        <p><span>审批处理</span></p>
+                        <div class="box-content-audit layui-form">
+                            <!--<div class="layui-form-item">-->
+                                <!--<label class="layui-form-label" style="line-height: 67px">审批意见 :</label>-->
+                                <!--<div class="layui-input-block">-->
+                                    <!--<input type="radio" name="sex" value="同意" title="同意"><div class="layui-unselect layui-form-radio"><i class="layui-anim layui-icon"></i><div>同意</div></div>-->
+                                    <!--<input type="radio" name="sex" value="不同意" title="不同意"><div class="layui-unselect layui-form-radio"><i class="layui-anim layui-icon"></i><div>不同意</div></div>-->
+
+                                <!--</div>-->
+                            <!--</div>-->
+                            <div class="layui-form-item layui-form-text">
+                                <label class="layui-form-label">意见说明 :</label>
+                                <div class="layui-input-block">
+                                    <textarea placeholder="请输入内容" class="layui-textarea opinion" id="opinion-val"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="btn-group">
+                            <button class="layui-btn layui-btn-primary cancelEditor">取消</button>
+                            <button class="layui-btn layui-btn-primary getDocData">确定</button>
+                        </div>
+                    </div>
+                </div>
+                <span class="right-sp"><span style="color:#c2c2c2;">我的审批 一 </span> <span style="font-weight:500">详情</span></span>
+                <div class="table-box" id="table_box">
+                    <h3>基本信息</h3>
+                    <div class="basic-info">
+                        <div class="center-box">
+                            <div class="layui-form-item">
+                                <div class="layui-inline">
+                                    <label class="layui-form-label">方案名称:</label>
+
+                                    <div class="layui-input-inline">
+
+                                        <input type="tel" name="phone" lay-verify="required" disabled  autocomplete="off" class="layui-input project_Name info-val" value="" >
+                                    </div>
+                                </div>
+                                <div class="layui-inline">
+                                    <label class="layui-form-label">编制单位:</label>
+                                    <div class="layui-input-inline">
+                                        <input type="tel" name="phone" lay-verify="required" disabled autocomplete="off" class="layui-input developOrgan info-val"  value="" >
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="layui-form-item">
+                                <div class="layui-inline">
+                                    <label class="layui-form-label">方案版本:</label>
+                                    <div class="layui-input-inline">
+                                        <input type="tel" name="phone" lay-verify="required"  disabled autocomplete="off" class="layui-input solutionVersion info-val"  >
+
+                                    </div>
+                                </div>
+                                <div class="layui-inline">
+                                    <label class="layui-form-label">开发单位:</label>
+                                    <div class="layui-input-inline">
+                                        <input type="tel" name="phone"  autocomplete="off"  disabled class="layui-input kfdevelopOrgan info-val" id="kfdevelopOrgan">
+                                    </div>
+                                </div>
+                                <div class="layui-inline">
+                                    <label class="layui-form-label">开发单位负责人:</label>
+                                    <div class="layui-input-inline">
+                                        <input type="tel" name="phone" lay-verify="required" disabled autocomplete="off" class="layui-input staffvalue info-val">
+
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <!--项目概述-->
+                    <div id="overview">
+                        <h3>
+                            <span class="overview">项目概述</span>
+                            <span class="audit-cont"></span>
+                            <i class="iconfont icon-bitian audit-i-box"></i>
+                            <i class="iconfont icon-bianji box-right-edit" onclick="edit(1,this)"></i>
+
+                        </h3>
+                        <div class="item-box">
+                            <div class="item-destail" id="pj-background">
+                                <span>项目背景</span>
+                                <p>
+                            </div>
+                        </div>
+                        <div class="item-box">
+                            <div class="item-destail" id="systemCurrent">
+                                <span>系统现状</span>
+                                <p>系统现状</p>
+                            </div>
+                        </div>
+                        <div class="item-box">
+                            <div class="item-destail" id="buildGoal">
+                                <span>建设目标</span>
+                                <p>
+                            </div>
+                        </div>
+                        <div class="item-box">
+                            <div class="item-destail" id="buildContent">
+                                <span>建设内容</span>
+                                <p>建设内容</p>
+                            </div>
+                        </div>
+                    </div>
+                <!--需求分析-->
+                    <div id="pj-demandAnalysis">
+                        <h3><span class="demanalysisList">需求分析</span>
+                            <span class="audit-cont"></span>
+                            <i class="iconfont icon-bitian audit-i-box"></i>
+                            <i class="iconfont icon-bianji box-right-edit" onclick="edit(2,this)"></i>
+                        </h3>
+                        <div class="item-box">
+                            <div class="item-destail" id="functionalRoleAnalysis">
+                                <span>功能角色分析</span>
+                                <p></p>
+                                <!--<div class="role-box">-->
+                                    <!--<p><span>姓名：</span>张三</p>-->
+                                    <!--<p><span>职责：</span>治安</p>-->
+                                <!--</div>-->
+                            </div>
+                        </div>
+                        <div class="item-box">
+                            <div class="item-destail" id="businessRequirements">
+                                <span>业务需求</span>
+                                <p></p>
+                            </div>
+                        </div>
+                        <div class="item-box">
+                            <div class="item-destail" id="dataIntegration">
+                                <span>数据资源整合</span>
+                                <p></p>
+                            </div>
+                        </div>
+                    </div>
+                    <!--架构设计-->
+                    <div id="pj-design">
+                            <h3><span class="saveArchidesign">架构设计</span>
+                                <span class="audit-cont"></span>
+                                <i class="iconfont icon-bitian audit-i-box"></i>
+                                <i class="iconfont icon-bianji box-right-edit" onclick="edit(3,this)"></i>
+                            </h3>
+                            <div class="design-box">
+
+                            </div>
+                    </div>
+                    <!--开发规范-->
+                    <div id="pj-normalize">
+                        <h3>开发规范<span class="audit-cont"></span></h3>
+                        <div class="item-box">
+                            <div class="item-destail">
+                                    <p>
+                                        市局aPaaS规范包含以下文件：
+                                        1、微服务与应用开发规范
+                                        2、微服务与应用上云实施规范
+                                        3、统一身份认证对接规范
+                                        4、统一门户对接规范
+                                        5、公安部数据对标规范（通过数据对标服务提供）
+                                        1、《微服务与应用开发规范》
+                                        提供应用与微服务粒度划分原则性指导以及开发规范。
+                                        2、《微服务与应用上云实施规范》
+                                        提供各个aPaaS服务、SaaS应用、数据库以及文件存储的开发、部署与运维的标准性指导。
+                                        3、《统一身份认证对接规范》
+                                        提供统一支撑平台统一用户服务对接规范。
+                                        4、《统一门户对接规范》
+                                        提供单点登录、待办任务、消息服务、S3文件存储服务、日志组件、仪表盘服务、任务推送组件、订阅服务、统一配置中心服务sdk的使用方法。
+                                                    <!--<div class="box-norm"><i class="iconfont icon-guanlianfujian">我的附件</i><span class="box-download"><i class="iconfont icon-xiazai"></i></span></div>-->
+                                    </p>
+                            </div>
+                        </div>
+                    </div>
+                    <!--应用设计-->
+                    <div id="pj-application">
+                        <h3><span class="applicationdesignList">应用设计</span></h3>
+                        <div class="box-app">
+                        </div>
+                    </div>
+                    <!--微服务设计-->
+                    <div id="pj-service">
+                            <h3><span class="microserviceList">微服务设计</span></h3>
+                            <div class="service-box">
+                            </div>
+                    </div>
+                    <!--服务部署与运行资源-->
+                    <!--<div id="pj-deploy">
+                        <h3><span class="deployrunList">服务部署与运行资源</span></h3>
+                        <div class="deploy-box">
+
+                        </div>
+                    </div>-->
+                    <!--风险解决方案-->
+                    <div id="pj-solution">
+                        <h3><span class="risksolutionList">风险解决方案</span>
+                            <span class="audit-cont"></span>
+                            <i class="iconfont icon-bitian audit-i-box"></i>
+                            <i class="iconfont icon-bianji box-right-edit"  onclick="edit(8,this)"></i>
+                        </h3>
+                            <div class="solution-box">
+
+                        </div>
+                    </div>
+                    <!--已分配开发人员-->
+                    <div id="pj-staffvalue">
+                        <h3><span class="staffvalue">已分配开发人员</span><span class="audit-cont"></span><!--<i class="iconfont icon-bianji box-right-edit"      onclick="edit(9)"></i>--></h3>
+                        <div class="staffvalue-box">
+                            <p></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../../js/xhsdk.min.js"></script>
+<script src="../../lib/jquery/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../lib/layui/layui.all.js"></script>
+<script src="../../js/commonUrl/commonUrl.js"></script>
+<script src="../../lib/formSelects/formSelects-v4.js"></script>
+<script src="projectAudit_destail.js"></script>
+
+</body>
+
+</html>

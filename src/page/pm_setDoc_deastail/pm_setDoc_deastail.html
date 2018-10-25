@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>项目管理模块</title>
+    <link rel="stylesheet" href="../../lib/layui/css/layui.css">
+    <link rel="stylesheet" href="../../lib/formSelects/formSelects-v4.css">
+    <link rel="stylesheet" href="../../font/iconfont.css">
+    <link rel="stylesheet" href="../pChangeApplicationForm/font/iconfont.css">
+    <link rel="stylesheet" href="../pm_setDoc/pm_setDoc.css">
+    <link rel="stylesheet" href="../pm_setDoc/style.css">
+
+    <style>
+        .layui-form-label {
+            float: left;
+            display: block;
+            padding: 9px 15px;
+            width: 108px;
+            font-weight: 400;
+            line-height: 20px;
+            text-align: right;
+        }
+        .infotxt{
+            line-height: 38px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="pm-model">
+    <!--<div class="pm-header">-->
+        <!--<p>项目管理</p>-->
+    <!--</div>-->
+    <div class="pm-body">
+        <div class="leftAnchor">
+            <div class="pjprogress">
+                <a href="javascript:void(0)" class="docExport">文档导出</a>
+            </div>
+            <hr class="layui-bg-gray">
+            <div class="anchorNav">
+                <ul>
+                    <li>
+                        <a href="#pj-basic-info">
+                            <div class="nav-left">
+                                <i class="iconfont icon-xiangmuxushu"></i>
+                                <span>基本信息</span>
+                            </div>
+                            <p class="font-red"></p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#pj-overview">
+                            <div class="nav-left">
+                                <i class="iconfont icon-xiangmuxushu"></i>
+                                <span>项目概述</span>
+                            </div>
+                            <p class="font-red"></p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#pj-demandAnalysis">
+                            <div class="nav-left">
+                                <i class="iconfont icon-xuqiufenxi"></i>
+                                <span>需求分析</span>
+                            </div>
+                            <p class="font-red"></p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#pj-design">
+                            <div class="nav-left">
+                                <i class="iconfont icon-fangansheji"></i>
+                                <span>架构设计</span>
+                            </div>
+                            <p class="font-red"></p>
+                        </a>
+
+                    </li>
+                    <li>
+                        <a href="#pj-normalize">
+                            <div class="nav-left">
+                                <i class="iconfont icon-kaifaguifan"></i>
+                                <span>开发规范</span>
+                            </div>
+                            <p class="font-red"></p>
+                        </a>
+
+                    </li>
+
+                    <li>
+                        <a  href="#pj-service">
+                            <div class="nav-left">
+                                <i class="iconfont icon-weifuwusheji"></i>
+                                <span>微服务设计</span>
+                            </div>
+                            <p class="font-red"></p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#pj-application">
+                            <div class="nav-left">
+                                <i class="iconfont icon-yingyongsheji"></i>
+                                <span>应用设计</span>
+                            </div>
+                            <p class="font-red"></p>
+                        </a>
+                    </li>
+                    <!--<li>-->
+                        <!--<a href="#pj-deploy">-->
+                            <!--<div class="nav-left">-->
+                                <!--<i class="iconfont icon-fuwubushuyuyunhangziyuan"></i>-->
+                                <!--<span>服务部署与运行资源</span>-->
+                            <!--</div>-->
+                            <!--<p class="font-red"></p>-->
+                        <!--</a>-->
+                    <!--</li>-->
+                    <li>
+                        <a href="#pj-solution">
+                            <div class="nav-left">
+                                <i class="iconfont icon-fengxianjiejuefangan"></i>
+                                <span>风险解决方案</span>
+                            </div>
+                            <p class="font-red"></p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#pj-staffvalue">
+                            <div class="nav-left">
+                                <i class="iconfont icon-xiangmuxushu"></i>
+                                <span>分配开发人员</span>
+                            </div>
+                            <p class="font-red"></p>
+                        </a>
+                    </li>
+                </ul>
+                <div class="save-btn">
+                    <!--<button class="layui-btn layui-btn-normal layui-btn-sm" id="">保存</button>-->
+
+                </div>
+            </div>
+        </div>
+        
+        <!-- 右边内容填写 -->
+        <div class="rightContent layui-form">
+            <div class="popUpbox-tip" style="display: none;">
+                <div class="editContent1">
+                    <p><span>服务选择</span></p>
+                    <div class="left-right-box">
+                        <div class="left-ft-box layui-form">
+                            <div class="layui-input-inline" style="width:100%">
+                                <input type="text" name="project_Name" id="project_Responsible"  autocomplete="off" class="layui-input" >
+                                <i class="layui-icon layui-icon-search right-box-search"></i>
+                            </div>
+                            <div class="ry-option" >
+                                <span class="ry-label">选择:</span>
+                                <div class="layui-form-item" pane="" id="Personnel">
+                                    <!--<div class="option-checkbox">-->
+                                    <!--<input type="checkbox" name="like1[write]" lay-skin="primary" title="张笑天"  value="张笑天" lay-filter="staffCheckbox">-->
+                                    <!--</div>-->
+                                    <!--<div class="option-checkbox">-->
+                                    <!--<input type="checkbox" name="like1[write]" lay-skin="primary" title="李思咦" value="李思咦" lay-filter="staffCheckbox">-->
+                                    <!--</div>-->
+                                    <!--<div class="option-checkbox">-->
+                                    <!--<input type="checkbox" name="like1[write]" lay-skin="primary" title="李思咦" value="李思咦" lay-filter="staffCheckbox">-->
+                                    <!--</div>-->
+                                    <!--<div class="option-checkbox">-->
+                                    <!--<input type="checkbox" name="like1[write]" lay-skin="primary" title="李思咦" value="李思咦" lay-filter="staffCheckbox">-->
+                                    <!--</div>-->
+
+                                </div>
+                                <div id="page-button"></div>
+                            </div>
+
+                        </div>
+                        <div class="right-ft-box">
+                            <div class="header-ft-box">
+                                <span>已选</span><span>（0）</span><span>清空</span>
+                            </div>
+                            <div class="checkbox-box">
+                                <ul>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="btn-group service-sumbit">
+                        <div class="layui-btn layui-btn-primary getDocData" onclick="saveService(this)">保存</div>
+                        <div class="layui-btn layui-btn-primary cancelEditor">取消</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="right-sp"> <span style="color:#c2c2c2;">项目列表 一 </span> <span style="color:#c2c2c2;">实施方案 一 </span><span style="font-weight:500">实施方案详情</span></div>
+            <!--基本信息-->
+            <div class="pj-item" id="pj-basic-info">
+                <!--<div class="right-sp"> <span style="color:#c2c2c2;">项目列表 一 </span> <span style="color:#c2c2c2;">项目详情 一 </span><span style="font-weight:500">添加项目方案</span></div>-->
+
+                <div class="pj-item-header">
+                    <div class="pj-item-header-left">
+                        <p>基本信息</p>
+                        <!--<p>-->
+                        <!--<i class="iconfont icon-bangzhu"></i>-->
+                        <!--<span>帮助</span>-->
+                        <!--</p>-->
+                    </div>
+                    <div class="pj-item-header-right">
+                    </div>
+                </div>
+                <hr class="layui-bg-gray">
+                <div class="pj-item-body">
+                    <!--新增完成-->
+                    <div class="info-box" style="">
+                        <div class="center-box">
+                            <div class="layui-form-item">
+                                <div class="layui-inline">
+                                    <label class="layui-form-label">方案名称:</label>
+                                    <div class="layui-input-inline">
+                                        <input type="tel" name="phone" autocomplete="off" class="layui-input project_Name" disabled value="">
+                                    </div>
+                                </div>
+                                <div class="layui-inline">
+                                    <label class="layui-form-label">编制单位:</label>
+                                    <div class="layui-input-inline">
+                                        <input type="tel" name="phone"  autocomplete="off" class="layui-input makeUnit"  disabled value="" >
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="layui-form-item">
+                                <div class="layui-inline">
+                                    <label class="layui-form-label">方案版本:</label>
+                                    <div class="layui-input-inline">
+                                        <input type="tel" name="phone"  autocomplete="off" class="layui-input solutionVersion"  disabled value="" >
+
+                                    </div>
+                                </div>
+                                <div class="layui-inline">
+                                    <label class="layui-form-label">开发单位:</label>
+                                    <div class="layui-input-inline">
+                                        <input type="tel" name="phone"  autocomplete="off"  disabled class="layui-input kfdevelopOrgan" id="kfdevelopOrgan" value="">
+                                    </div>
+                                </div>
+                                <div class="layui-inline">
+                                    <label class="layui-form-label" style="width: 130px">开发单位负责人:</label>
+                                    <div class="layui-input-inline">
+                                        <!--<div class="layui-input-inline" style="width: 250px">-->
+                                        <!--<select xm-select="staffselect" xm-select-search="" xm-select-max="2">-->
+
+                                        <!--</select>-->
+                                        <!--</div>-->
+                                        <input type="tel" name="phone"  autocomplete="off" class="layui-input staffvalue" disabled value="" >
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                </div>
+            </div>
+            <!-- 项目概述 -->
+            <div class="pj-item" id="pj-overview">
+                <!--<div class="right-sp"> <span style="color:#c2c2c2;">项目列表 一 </span> <span style="color:#c2c2c2;">项目详情 一 </span><span style="font-weight:500">添加项目方案</span></div>-->
+
+                <div class="pj-item-header">
+                    <div class="pj-item-header-left">
+                        <p>项目概述</p>
+
+                    </div>
+                    <div class="pj-item-header-right">
+                        <div class="audit-box">
+                            <i class="iconfont icon-bitian"></i>
+                            <div class="show-audit-box">
+                                <ul>
+
+                                </ul>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <hr class="layui-bg-gray">
+                <div class="pj-item-body">
+                    <div class="secLevel">
+                        <div class="pj-item-body-top">
+                            <p class="editTitle">项目背景</p>
+
+                            <div class="editOprate">
+                            </div>
+                        </div>
+                        <div class="pj-item-body-bottom" id="pj-background">
+                              <p></p>
+                        </div>
+                    </div>
+                    <div class="secLevel">
+                        <div class="pj-item-body-top">
+                            <p class="editTitle">系统现状</p>
+                            <div class="editOprate">
+
+                            </div>
+                        </div>
+                        <div class="pj-item-body-bottom" id="systemCurrent">
+                               <p></p>
+
+                        </div>
+                    </div>
+                    <div class="secLevel">
+                        <div class="pj-item-body-top">
+                            <p class="editTitle">建设目标</p>
+                        </div>
+                        <div class="pj-item-body-bottom" id="buildGoal">
+                               <p></p>
+                        </div>
+                    </div>
+                    <div class="secLevel">
+                        <div class="pj-item-body-top">
+                            <p class="editTitle">建设内容</p>
+
+                        </div>
+                        <div class="pj-item-body-bottom" id="buildContent">
+                               <p></p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <!-- 需求分析 -->
+            <div class="pj-item" id="pj-demandAnalysis">
+                <div class="pj-item-header">
+                    <div class="pj-item-header-left">
+                        <p>需求分析</p>
+
+                    </div>
+                    <div class="pj-item-header-right">
+                        <div class="audit-box">
+                            <i class="iconfont icon-bitian"></i>
+                            <div class="show-audit-box">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <hr class="layui-bg-gray">
+                <div class="pj-item-body">
+                    <div class="secLevel">
+                        <div class="pj-item-body-top">
+                            <p class="editTitle">功能角色分析</p>
+                            <div class="editOprate">
+
+                            </div>
+                        </div>
+                        <div class="pj-item-body-bottom" id="functionalRoleAnalysis">
+                               <p></p>
+                        </div>
+                    </div>
+                    <div class="secLevel">
+                        <div class="pj-item-body-top">
+                            <p class="editTitle">业务需求</p>
+
+                        </div>
+                        <div class="pj-item-body-bottom" id="businessRequirements">
+                                <p></p>
+                        </div>
+                    </div>
+                    <div class="secLevel">
+                        <div class="pj-item-body-top">
+                            <p class="editTitle">数据资源整合</p>
+
+                        </div>
+                        <div class="pj-item-body-bottom" id="dataIntegration">
+                             <p></p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <!-- 架构设计 -->
+            <div class="pj-item" id="pj-design">
+                <div class="pj-item-header">
+                    <div class="pj-item-header-left">
+                        <p>架构设计</p>
+
+                    </div>
+                    <div class="pj-item-header-right">
+                        <div class="audit-box">
+                            <i class="iconfont icon-bitian"></i>
+                            <div class="show-audit-box">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <hr class="layui-bg-gray">
+                <div class="pj-item-body">
+                    <div class="secLevel">
+                        <div class="pj-item-body-top">
+                            <p class="editTitle">总体架构</p>
+
+                        </div>
+                        <div class="pj-item-body-bottom" id="frameworkdesign">
+                              <p></p>
+                        </div>
+                    </div>
+                    <div class="secLevel">
+                        <div class="pj-item-body-top">
+                            <p class="editTitle">网络拓扑图</p>
+                            <div class="editOprate">
+                                <!--<i class="iconfont icon-tianjia"></i>-->
+                                <!--<lable for="project_Enclosure" id="uploadIMG">上传拓朴图</lable>-->
+                                <input type="file"  class="enclosure verify-value" name="project_Enclosure" id="project_Enclosure" style="display: none;">
+                            </div>
+                        </div>
+                        <div class="pj-item-body-bottom">
+                            <p class="img-url" style="display: none" id="topologicalpic"></p>
+                            <!--<span class="fillInCon1">-->
+                            <!--<i class="iconfont icon-tianjia"></i>-->
+                            <!--<lable for="project_Enclosure" id="uploadIMG">上传拓朴图</lable>-->
+                            <!--<input type="file"  class="enclosure verify-value" name="project_Enclosure" id="project_Enclosure" style="display: none;">-->
+                            <!--</span>-->
+                            <div class="layui-upload-list">
+                                <img class="layui-upload-img" id="demo1">
+                                <p id="demoText"></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="secLevel">
+                        <div class="pj-item-body-top">
+                            <p class="editTitle">系统建设原则及路线</p>
+                            <div class="editOprate">
+
+                            </div>
+                        </div>
+                        <div class="pj-item-body-bottom" id="principlesroutes">
+                              <p></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- 开发规范 -->
+            <div class="pj-item" id="pj-normalize">
+                <div class="pj-item-header">
+                    <div class="pj-item-header-left">
+                        <p>开发规范</p>
+
+                    </div>
+                    <div class="pj-item-header-right">
+                        <div class="notread">
+                            <span>已阅读</span>
+                        </div>
+                    </div>
+                </div>
+                <hr class="layui-bg-gray">
+                <div class="pj-item-body">
+                    <div class="secLevel">
+                        <div class="pj-item-body-bottom norm" style="border:0px">
+                            <p>
+                            <div class="norm-content"> 市局aPaaS规范包含以下文件：
+                            1、微服务与应用开发规范
+                            2、微服务与应用上云实施规范
+                            3、统一身份认证对接规范
+                            4、统一门户对接规范
+                            5、公安部数据对标规范（通过数据对标服务提供）
+                            1、《微服务与应用开发规范》
+                            提供应用与微服务粒度划分原则性指导以及开发规范。
+                            2、《微服务与应用上云实施规范》
+                            提供各个aPaaS服务、SaaS应用、数据库以及文件存储的开发、部署与运维的标准性指导。
+                            3、《统一身份认证对接规范》
+                            提供统一支撑平台统一用户服务对接规范。
+                            4、《统一门户对接规范》
+                            提供单点登录、待办任务、消息服务、S3文件存储服务、日志组件、仪表盘服务、任务推送组件、订阅服务、统一配置中心服务sdk的使用方法。  </div>
+                            <a class="Read_specification" href="javascript:void(0)" onclick="normalize(this)">阅读规范</a>
+                            </p>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 微服务设计 -->
+            <div class="pj-item" id="pj-service">
+                <div class="pj-item-header">
+                    <div class="pj-item-header-left">
+                        <p>微服务设计</p>
+
+                    </div>
+                    <div class="pj-item-header-right">
+                        <div class="audit-box">
+                            <i class="iconfont icon-bitian"></i>
+                            <div class="show-audit-box">
+                                <ul>
+
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <hr class="layui-bg-gray">
+                <div id="service-box"></div>
+            </div>
+            <!-- 应用设计 -->
+            <div class="pj-item" id="pj-application">
+                <div class="pj-item-header">
+                    <div class="pj-item-header-left">
+                        <p>应用设计</p>
+
+                    </div>
+                    <div class="pj-item-header-right">
+                        <div class="audit-box">
+                            <i class="iconfont icon-bitian"></i>
+                            <div class="show-audit-box">
+                                <ul>
+
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <hr class="layui-bg-gray">
+                    <div class="application-box"></div>
+            </div>
+            <!--&lt;!&ndash; 服务部署与运行资源 &ndash;&gt;-->
+            <!--<div class="pj-item" id="pj-deploy">-->
+                <!--<div class="pj-item-header">-->
+                    <!--<div class="pj-item-header-left">-->
+                        <!--<p>服务部署与运行资源</p>-->
+
+                    <!--</div>-->
+                    <!--<div class="pj-item-header-right">-->
+                    <!--</div>-->
+                <!--</div>-->
+                <!--<hr class="layui-bg-gray">-->
+                <!--<div class="pj-item-body" id="deploy-box">-->
+
+                <!--</div>-->
+            <!--</div>-->
+            <!-- 风险解决方案 -->
+            <div class="pj-item" id="pj-solution">
+                <div class="pj-item-header">
+                    <div class="pj-item-header-left">
+                        <p>风险解决方案</p>
+
+                    </div>
+                    <div class="pj-item-header-right">
+                        <div class="audit-box">
+                            <i class="iconfont icon-bitian"></i>
+                            <div class="show-audit-box">
+                                <ul>
+
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <hr class="layui-bg-gray">
+                <div class="pj-item-body">
+                    <div class="secLevel">
+                        <div class="pj-item-body-top">
+                            <p class="editTitle">风险解决方案</p>
+                        </div>
+                        <div class="pj-item-body-bottom" id="riskSolution">
+                              <p></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--分配人员-->
+            <div class="pj-item" id="pj-staffvalue">
+                <div class="pj-item-header">
+                    <div class="pj-item-header-left">
+                        <p>分配开发人员</p>
+                        <!--<p>-->
+                        <!--<i class="iconfont icon-bangzhu"></i>-->
+                        <!--<span>帮助</span>-->
+                        <!--</p>-->
+                    </div>
+                    <div class="pj-item-header-right">
+                    </div>
+                </div>
+                <hr class="layui-bg-gray">
+                <div class="pj-item-body">
+                    <div class="layui-inline">
+                        <label class="layui-form-label">开发人员:</label>
+                        <div class="layui-input-inline">
+                            <p id="staffvalue_two" style="line-height: 38px;"></p>
+                            <!--<input type="tel" name="phone" lay-verify="required" autocomplete="off" class="layui-input verify-value" id="staffvalue_two"  disabled>-->
+                            <!--<span class="box-right-renyuan"><i class="iconfont icon-renyuanzengjia"></i></span>-->
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+
+        <!-- 内容输入框 -->
+        <div class="popUpbox" style="display: none;">
+            <div class="editContent">
+                <p class="modelline"><span>模块名称：</span><span class="modelName">项目背景</span></p>
+                <div id="editbox"></div>
+                <div class="btn-group">
+                    <button class="layui-btn layui-btn-primary getDocData">保存</button>
+                    <button class="layui-btn layui-btn-primary cancelEditor">取消</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- 添加二级模块 -->
+        <div class="addModuleTwo">
+            <div class="addInfo">
+                <p class="addTitle">添加二级模块</p>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">模块名称：</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="moduleTwoName" autocomplete="off" placeholder="请输入模块名称" class="layui-input moduleTwoName" lay-verify="required" id="moduleTwoName">
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">一级分类：</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="parentModuleName" class="layui-input parentModuleName" value="项目背景" disabled="disabled" style="background-color: #f1f1f1;cursor: not-allowed;">
+                    </div>
+                </div>
+                <div class="btn-group">
+                    <button class="layui-btn layui-btn-primary saveModuleTwo">保存</button>
+                    <button class="layui-btn layui-btn-primary cancelSave">取消</button>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- 内容编辑框 -->
+        <div class="editConbox" style="display: none;">
+            <div class="editContent">
+                <p class="modelline"><span>模块名称：</span><span class="modelName">项目背景</span></p>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">模块名称：</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="moduleTwoName" autocomplete="off" placeholder="请输入模块名称" class="layui-input moduleTwoName" lay-verify="required">
+                    </div>
+                </div>
+                <div id="editAlreadyBox"></div>
+                <div class="btn-group">
+                    <button class="layui-btn layui-btn-primary getDocData">保存</button>
+                    <button class="layui-btn layui-btn-primary cancelEditor">取消</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- 添加一级模块 -->
+        <div class="addModuleOne layui-form" lay-filter="moduleOneName" style="display: none;">
+            <div class="editContent">
+                <p class="modelline">添加一级模块</p>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">模块名称：</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="moduleOneName" autocomplete="off" placeholder="请输入模块名称" class="layui-input moduleOneName" lay-verify="required" id="one-template">
+                    </div>
+                </div>
+
+                <div class="layui-form-item" style="float: right;">
+                    <div class="layui-input-block">
+                        <button class="layui-btn getDocData layui-btn-normal layui-btn-sm" lay-submit lay-filter="*" id="save-template">保存</button>
+                        <button type="button" class="layui-btn cancelAdd layui-btn-danger layui-btn-sm">取消</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="returnTop" style="display: none;">
+        <img src="../pm_setDoc/img/1400503722_164344.png" alt="">
+    </div>
+</div>
+</div>
+<script src="../../js/xhsdk.min.js"></script>
+<script src="../../lib/jquery/jquery.min.js"></script>
+
+<script src="../../lib/layui/layui.all.js"></script>
+<script src="../../js/commonUrl/commonUrl.js"></script>
+<script src="../../lib/editor/wangEditor.min.js"></script>
+<script src="../../lib/formSelects/formSelects-v4.js"></script>
+<script src="pm_setDoc_deastail.js"></script>
+<script src="FileSaver.js"></script>
+<script src="jquery.wordexport.js"></script>
+
+<script>
+    jQuery(document).ready(function($) {
+        $(".docExport").click(function(event) {
+            $(".rightContent").wordExport();
+        });
+    });
+
+</script>
+</body>
+</html>

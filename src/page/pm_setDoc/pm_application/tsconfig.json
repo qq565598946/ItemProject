@@ -1,0 +1,123 @@
+{
+  "code": 200,
+  "cmd": "/servermanagesupplier/supplier/queryUseServerList",
+  "data": [
+    {
+      "applicationsID": "2f78b6ed959f4915926224b4b19cf637",
+      "supplierUser": "92",
+      "serverinfoID": "caea9d14359642eab1792a30235148a1",
+      "serverName": "测试服务-06",
+      "state": 2,
+      "exampleContent": null,
+      "createUser": "92",
+      "createDate": 1531741574000,
+      "updateUser": "92",
+      "updateDate": 1531741574000,
+      "search": null
+    },
+    {
+      "applicationsID": "2f7b14a6dd824e3e98bcb6707647336c",
+      "supplierUser": "92",
+      "serverinfoID": "786d2b41c9f944ccadc60d385241101b",
+      "serverName": "公安部车辆查询服务",
+      "state": 2,
+      "exampleContent": "通过",
+      "createUser": "92",
+      "createDate": 1522852193000,
+      "updateUser": "92",
+      "updateDate": 1522852193000,
+      "search": null
+    },
+    {
+      "applicationsID": "5fa500ed308e474f8341cee7d9a6d301",
+      "supplierUser": "92",
+      "serverinfoID": "4f2f80f11a31452a96dd217688077689",
+      "serverName": "测试服务06211042",
+      "state": 2,
+      "exampleContent": null,
+      "createUser": "92",
+      "createDate": 1529565080000,
+      "updateUser": "92",
+      "updateDate": 1529565080000,
+      "search": null
+    },
+    {
+      "applicationsID": "935e404ceaaa453fb33e4025208ded3b",
+      "supplierUser": "92",
+      "serverinfoID": "1696a97eb44048bda84f6fc541d4481e",
+      "serverName": "yyqcesfenlei88",
+      "state": 2,
+      "exampleContent": null,
+      "createUser": "92",
+      "createDate": 1526083115000,
+      "updateUser": "92",
+      "updateDate": 1526083115000,
+      "search": null
+    },
+    {
+      "applicationsID": "a058f385f6764fc5bf0223331295836a",
+      "supplierUser": "92",
+      "serverinfoID": "7508a61d0e694660b1d26c89de025886",
+      "serverName": "治安采集-人员盘查",
+      "state": 2,
+      "exampleContent": "通过",
+      "createUser": "92",
+      "createDate": 1522866510000,
+      "updateUser": "92",
+      "updateDate": 1522866510000,
+      "search": null
+    },
+    {
+      "applicationsID": "bc32b5460da54943bcc629945bfe81d2",
+      "supplierUser": "92",
+      "serverinfoID": "1936171b4920414c9249fac069e281d3",
+      "serverName": "我的通知",
+      "state": 2,
+      "exampleContent": "通过",
+      "createUser": "92",
+      "createDate": 1523444100000,
+      "updateUser": "92",
+      "updateDate": 1523444100000,
+      "search": null
+    },
+    {
+      "applicationsID": "c0dbdca078a741cbbd769d795b73a996",
+      "supplierUser": "92",
+      "serverinfoID": "ae2f3d8228394ba9895248f580ba1109",
+      "serverName": "测试服务05031738",
+      "state": 2,
+      "exampleContent": null,
+      "createUser": "92",
+      "createDate": 1525512222000,
+      "updateUser": "92",
+      "updateDate": 1525512222000,
+      "search": null
+    },
+    {
+      "applicationsID": "d53a3dee6a5744c19949b8dea281820c",
+      "supplierUser": "92",
+      "serverinfoID": "cbb3e42a939c4b0c8f9c0f213637e273",
+      "serverName": "深圳E勘查",
+      "state": 2,
+      "exampleContent": "通过",
+      "createUser": "92",
+      "createDate": 1528454819000,
+      "updateUser": "92",
+      "updateDate": 1528454819000,
+      "search": null
+    },
+    {
+      "applicationsID": "e1d41da4b61148b49d0f9b36c567439b",
+      "supplierUser": "92",
+      "serverinfoID": "7ee763fab52549cfbcf1bbc34c1279a5",
+      "serverName": "服务管理服务(供应商)",
+      "state": 2,
+      "exampleContent": "通过",
+      "createUser": "92",
+      "createDate": 1528456204000,
+      "updateUser": "92",
+      "updateDate": 1528456204000,
+      "search": null
+    }
+  ]
+}

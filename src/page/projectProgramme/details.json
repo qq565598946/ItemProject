@@ -1,0 +1,19 @@
+{
+  "code": "200",
+  "cmd": "/pms/solution/v1/projectinfo/find",
+  "data": {
+    "id": "c684b37c4fad402ab63b814bb9f8229a",
+    "projectName": "项目名称",
+    "projectCode": "8008208820",
+    "status": 0,
+    "constructOrgan": "建设单位名称",
+    "constructOrganLeader": "建设单位负责人",
+    "projectDescription": "项目概述",
+    "projectFile": "http//123.45.67.89/projectfile.doc",
+    "createBy": "huangyuxuan",
+    "lastUpdateBy": "huangyuxuan",
+    "createTime": "2018-05-14 20:43:37",
+    "updateTime": "2018-05-14 20:43:37",
+    "remark": "备注"
+  }
+}

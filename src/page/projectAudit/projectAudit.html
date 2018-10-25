@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>项目审核</title>
+    <link rel="stylesheet" type="text/css" href="../../lib/layui/css/layui.css" />
+    <link rel="stylesheet" href="../pChangeApplicationForm/font/iconfont.css">
+    <link rel="stylesheet" type="text/css" href="../../css/projectManage/projectManagement.css" />
+    <link rel="stylesheet" type="text/css" href="projectAudit.css" />
+</head>
+<body>
+<div class="projectApply">
+        <div class="loading-box" style="display: none"><img src="img/loading.gif" alt="加载中..."></div>
+    <!--<div class="public_title">-->
+        <!--<div>项目管理 </div>-->
+    <!--</div>-->
+    <div class="layui-container" style="padding:0px">
+        <div class="layui-row projectProgramme_box projectApply_box" style="padding: 0px;position: fixed">
+            <div class="layui-col-md10" id="box-audit">
+                <div class="table-box">
+                    <div class="audit_box_btn">
+                        <div id="audit_btn">
+
+                            <button class="layui-btn  layui-btn-primary check_pending active">待审核</button>
+                            <button class="layui-btn  layui-btn-primary checked_pending">已审核</button>
+                            <button class="layui-btn  layui-btn-primary checked_pending" style="display: none">已驳回</button>
+                            <button class="layui-btn layui-btn-primary all_pending">全部</button>
+                        </div>
+                        <!--<div class="search_box">-->
+                            <!--<input type="text" name="project_Name" id="search_con" autocomplete="off" class="layui-input">-->
+                            <!--<i class="layui-icon layui-icon-search right-box-search"></i>-->
+                            <!--<button class="layui-btn layui-btn-primary search_btn">搜索</button>-->
+                        <!--</div>-->
+                    </div>
+                    <table class="layui-table projectList_tabel" lay-even lay-skin="nob">
+                        <colgroup>
+                            <col width="150">
+                            <col width="200">
+                            <col>
+                        </colgroup>
+                        <thead>
+                        <tr>
+                            <th>序号</th>
+                            <th>类型</th>
+                            <th>项目名称</th>
+                            <th>编号</th>
+                            <th>版本</th>
+                            <th>审核状态</th>
+                            <th>提交人</th>
+                            <th>审核人</th>
+                            <th>时间</th>
+                            <th>操作</th>
+                        </tr>
+                        </thead>
+                        <tbody class="project-implem">
+
+                        </tbody>
+                    </table>
+                    <!--<div class="error-box">请求出现错误...</div>-->
+                    <div id="page-button2"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../../js/xhsdk.min.js"></script>
+<script src="../../lib/jquery/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../lib/layui/layui.all.js"></script>
+<script src="../../js/commonUrl/commonUrl.js"></script>
+<script src="projectAudit.js"></script>
+</body>
+
+</html>

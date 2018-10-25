@@ -1,0 +1,211 @@
+.popUpbox, .addModuleTwo, .editConbox, .addModuleOne {
+    width: 100%;
+    height: 100%;
+    /*background-color: rgba(0, 0, 0, .5);*/
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+}
+
+.editContent {
+    width: 440px;
+    height: 400px;
+    background-color: #fff;
+    padding: 20px 30px;
+    position: absolute;
+    top: 50%;
+    left: 56%;
+    margin-left: -300px;
+    margin-top: -200px;
+    box-shadow: -3px 3px 40px 5px #ccc;
+    -mox-box-shadow: -3px 3px 40px 5px #ccc;
+    -webkit-box-shadow: -3px 3px 40px 5px #ccc;
+    -moz-box-shadow: -3px 3px 40px 5px #ccc;
+}
+
+.editContent .modelline {
+    width: 100%;
+    height: 40px;
+    background-color: #295496;
+    line-height: 40px;
+    padding-left: 15px;
+    font-size: 15px;
+    font-family: "΢���ź�";
+    margin-bottom: 20px;
+    color: #fff;
+    font-size: 16px;
+    border-radius: 5px;
+}
+
+.editContent #editbox {
+    width: 100%;
+    height: 328px;
+}
+
+.btn-group {
+    float: right;
+    margin-top: 10px;
+    margin-right:  20px;
+}
+
+.left-right-box {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 45px;
+}
+
+.left-ft-box {
+    flex: 1;
+    width: 260px;
+    height: 250px
+
+}
+
+.right-ft-box {
+    flex: 1;
+    width: 260px;
+    height: 279px;
+    border: 1px solid #e6e6e6;
+    margin-left: 11px;
+}
+
+.ry-option {
+    border: 1px solid #e6e6e6;
+    width: 100%;
+    height: 270px;
+    margin-top: 9px;
+}
+
+.layui-btn-primary:hover {
+    border-color: #009688;
+    color: #333;
+    background: #136cf3;
+    color: #fff;
+}
+
+.option-checkbox {
+    margin-left: 42px;
+}
+
+.ry-label {
+    float: left;
+    margin-top: 8px;
+    margin-left: 13px;
+    margin-right: 13px;
+}
+
+.header-ft-box {
+    height: 38px;
+    background: #e6e6e6;
+    line-height: 38px;
+}
+
+.header-ft-box span:first-child {
+    margin-left: 10px;
+}
+
+.header-ft-box span:last-child {
+    float: right;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.checkbox-box {
+    padding-top: 15px;
+}
+
+.checkbox-box ul li {
+    line-height: 27px;
+    padding-left: 10px;
+}
+
+.checkbox-box ul li:hover {
+    background: #e6e6e6;
+}
+
+.layui-form-checked[lay-skin=primary] i {
+    border-color: #295596;
+    background-color: #295596;
+    color: #fff;
+}
+
+.iconfont.icon-icon.del-i {
+    float: right;
+    margin-right: 18px;
+    cursor: pointer;
+}
+
+.box-right-renyuan {
+    position: absolute;
+    right: 12px;
+    top: 4px;
+    cursor: pointer;
+}
+
+.submit-box div {
+    display: inline-block;
+    text-align: center;
+}
+
+.submit-box {
+    text-align: center;
+}
+
+.submitbutton {
+    width: 100px;
+    height: 30px;
+    line-height:30px;
+    background: #295596;
+    color: #fff;
+    cursor: pointer;
+}
+.savebutton {
+    color: #295596;
+    margin-left: 19px;
+    cursor: pointer;
+}
+#submit{
+    width: 100px;
+    height: 30px;
+    line-height: 30px;
+    background: #295596;
+    color: #fff;
+    cursor: pointer;
+}
+
+.updata-box {
+    text-align: right
+}
+
+button#testListAction {
+    background: #295596;
+}
+
+i.layui-icon.layui-icon-search.right-box-search {
+    position: absolute;
+    right: 8px;
+    font-size: 27px;
+    color: #8c8585;
+    top: 7px;
+    cursor: pointer;
+}
+.layui-form-radio>i:hover, .layui-form-radioed>i {
+    color: #295596;
+}
+.layui-upload {
+    overflow: hidden;
+    width: 827px;
+}
+
+.file-name{
+    overflow: hidden;
+}
+
+@media screen and (min-width: 1200px){
+    .layui-container {
+        width: 100%;
+    }
+}
+
+

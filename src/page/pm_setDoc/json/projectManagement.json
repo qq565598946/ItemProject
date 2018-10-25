@@ -1,0 +1,338 @@
+{
+  "cmd":"/pms/solution/v1/projectManagement/list",
+  "code":200,
+  "data":{
+    "demanalysisList":[
+      {
+        "auditOpinion":"",
+        "businessRequirements":"在微服务架构中，根据业务来拆分成一个个的服务，服务与服务之间可以相互调用（RPC），在Spring Cloud可以用RestTemplate+Ribbon和Feign来调用。为了保证其高可用，单个服务通常会集群部署。由于网络原因或者自身的原因，服务并不能保证100%可用，如果单个服务出现问题，调用这个服务就会出现线程阻塞，此时若有大量的请求涌入，Servlet容器的线程资源会被消耗完毕，导致服务瘫痪。服务与服务之间的依赖性，故障会传播",
+        "createTime":"2018-07-26 16:53:08",
+        "dataIntegration":"在微服务架构中，根据业务来拆分成一个个的服务，服务与服务之间可以相互调用（RPC），在Spring Cloud可以用RestTemplate+Ribbon和Feign来调用。为了保证其高可用，单个服务通常会集群部署。由于网络原因或者自身的原因，服务并不能保证100%可用，如果单个服务出现问题，调用这个服务就会出现线程阻塞，此时若有大量的请求涌入，Servlet容器的线程资源会被消耗完毕，导致服务瘫痪。服务与服务之间的依赖性，故障会传播",
+        "functionalRoleanalysis":"在微服务架构中，根据业务来拆分成一个个的服务，服务与服务之间可以相互调用（RPC），在Spring Cloud可以用RestTemplate+Ribbon和Feign来调用。为了保证其高可用，单个服务通常会集群部署。由于网络原因或者自身的原因，服务并不能保证100%可用，如果单个服务出现问题，调用这个服务就会出现线程阻塞，此时若有大量的请求涌入，Servlet容器的线程资源会被消耗完毕，导致服务瘫痪。服务与服务之间的依赖性，故障会传播",
+        "id":"967db66f843e47f7ae47ee7890a9f366",
+        "remark":"",
+        "solutionId":"a9ab025a15e34746aff377837f464b26",
+        "type":null,
+        "updateTime":"2018-07-26 16:53:08"
+      }
+    ],
+    "risksolutionList":[
+      {
+        "auditOpinion":"",
+        "createTime":"2018-07-26 16:56:24",
+        "id":"c7cefcc3174d4fccb6a8a82b995bcc63",
+        "remark":"",
+        "riskSolution":"在微服务架构中，根据业务来拆分成一个个的服务，服务与服务之间可以相互调用（RPC），在Spring Cloud可以用RestTemplate+Ribbon和Feign来调用。为了保证其高可用，单个服务通常会集群部署。由于网络原因或者自身的原因，服务并不能保证100%可用，如果单个服务出现问题，调用这个服务就会出现线程阻塞，此时若有大量的请求涌入，Servlet容器的线程资源会被消耗完毕，导致服务瘫痪。服务与服务之间的依赖性，故障会传播",
+        "solutionId":"a9ab025a15e34746aff377837f464b26",
+        "type":null,
+        "updateTime":"2018-07-26 16:56:24"
+      }
+    ],
+    "solutioninfoList":[
+      {
+        "applyBy":"24735178542809088",
+        "applyName":"",
+        "applyTime":"2018-07-26 16:59:20",
+        "auditBy":"24735178542809088",
+        "auditName":"",
+        "auditStatus":3,
+        "auditTime":"2018-07-26 17:01:26",
+        "createBy":"24735178542809088",
+        "createDeptcode":"440300120000X8",
+        "createDeptname":"星火公司警务云项目组架构组",
+        "createName":"张学连",
+        "createTime":"2018-07-26 16:51:42",
+        "developLeader":"24735178542809088",
+        "developLeaderName":"测试单位",
+        "developOrgan":"星火工程",
+        "developOrganName":"",
+        "developer":"24735178542809088",
+        "developerName":"郭德纲",
+        "id":"a9ab025a15e34746aff377837f464b26",
+        "isDelete":0,
+        "isRead":1,
+        "makeTime":null,
+        "makeUnit":"深圳市公安局",
+        "makeUnitName":"",
+        "moduleId":"",
+        "projectId":"048e235d184647aebc1caacc8167611e",
+        "remark":"",
+        "solutionName":"实施方案测试三",
+        "solutionStage":2,
+        "solutionVersion":"3.0",
+        "updateBy":"24735178542809088",
+        "updateName":"",
+        "updateTime":"2018-07-26 16:51:42"
+      }
+    ],
+    "microserviceList":[
+      {
+        "auditOpinion":"",
+        "basicService":"测试服务06211042,公安部车辆查询服务",
+        "createTime":"2018-07-26 16:53:37",
+        "deploymentEnvironment":"移动信息网",
+        "generalService":"测试服务05031738,深圳E勘查,治安采集-人员盘查",
+        "id":"3ee294c5785e49b5b2808ee81247c7eb",
+        "remark":"",
+        "runResource":"4G/6核",
+        "serviceDesign":"服务设计修改",
+        "serviceName":"微服务一",
+        "serviceType":2,
+        "solutionId":"a9ab025a15e34746aff377837f464b26",
+        "type":null,
+        "updateTime":"2018-07-27 09:55:44"
+      },
+      {
+        "auditOpinion":"",
+        "basicService":"我的通知,服务管理服务(供应商),深圳E勘查,测试服务-06,公安部车辆查询服务,测试服务05031738",
+        "createTime":"2018-07-26 16:54:04",
+        "deploymentEnvironment":"公安信息网",
+        "generalService":"测试服务06211042,yyqcesfenlei88,治安采集-人员盘查",
+        "id":"55d75b1c2c4b4a4b91fdb95430903695",
+        "remark":"",
+        "runResource":"4G/6核",
+        "serviceDesign":"在微服务架构中",
+        "serviceName":"微服务二 修改",
+        "serviceType":2,
+        "solutionId":"a9ab025a15e34746aff377837f464b26",
+        "type":null,
+        "updateTime":"2018-07-27 15:43:14"
+      },
+      {
+        "auditOpinion":"",
+        "basicService":"测试服务05031738,深圳E勘查,治安采集-人员盘查",
+        "createTime":"2018-07-27 09:56:26",
+        "deploymentEnvironment":"公安信息网",
+        "generalService":"测试服务06211042,公安部车辆查询服务",
+        "id":"7a08e72e359d424d888c6dff4744acfc",
+        "remark":"",
+        "runResource":"4G/6核",
+        "serviceDesign":"在微服务架构中，根据业务来拆分成一个个的服务，服务与服务之间可以相互调用（RPC），在Spring Cloud可以用RestTemplate+Ribbon和Feign来调用。为了保证其高可用，单个服务通常会集群部署。由于网络原因或者自身的原因，服务并不能保证100%可用，如果单个服务出现问题，调用这个服务就会出现线程阻塞",
+        "serviceName":"微服务四修改",
+        "serviceType":2,
+        "solutionId":"a9ab025a15e34746aff377837f464b26",
+        "type":null,
+        "updateTime":"2018-07-27 10:23:14"
+      },
+      {
+        "auditOpinion":"",
+        "basicService":"测试服务05031738,深圳E勘查,治安采集-人员盘查,深圳E勘查,公安部车辆查询服务",
+        "createTime":"2018-07-27 09:45:39",
+        "deploymentEnvironment":"移动信息网",
+        "generalService":"测试服务06211042,公安部车辆查询服务,yyqcesfenlei88,治安采集-人员盘查",
+        "id":"b3d6246cbe5b4dae8ab6df6f84da5107",
+        "remark":"",
+        "runResource":"4G/6核",
+        "serviceDesign":"服务设计3",
+        "serviceName":"微服务三",
+        "serviceType":3,
+        "solutionId":"a9ab025a15e34746aff377837f464b26",
+        "type":null,
+        "updateTime":"2018-07-27 09:45:39"
+      }
+    ],
+    "archidesignAuditList":[],
+    "archidesignList":[
+      {
+        "auditOpinion":"",
+        "createTime":"2018-07-26 16:53:14",
+        "frameworkDesign":"在微服务架构中，根据业务来拆分成一个个的服务，服务与服务之间可以相互调用（RPC），在Spring Cloud可以用RestTemplate+Ribbon和Feign来调用。为了保证其高可用，单个服务通常会集群部署。由于网络原因或者自身的原因，服务并不能保证100%可用，如果单个服务出现问题，调用这个服务就会出现线程阻塞，此时若有大量的请求涌入，Servlet容器的线程资源会被消耗完毕，导致服务瘫痪。服务与服务之间的依赖性，故障会传播",
+        "id":"d50200fdc5b947d2b460e9ccdeef5de7",
+        "principlesRoutes":"在微服务架构中，根据业务来拆分成一个个的服务，服务与服务之间可以相互调用（RPC），在Spring Cloud可以用RestTemplate+Ribbon和Feign来调用。为了保证其高可用，单个服务通常会集群部署。由于网络原因或者自身的原因，服务并不能保证100%可用，如果单个服务出现问题，调用这个服务就会出现线程阻塞，此时若有大量的请求涌入，Servlet容器的线程资源会被消耗完毕，导致服务瘫痪。服务与服务之间的依赖性，故障会传播",
+        "remark":"",
+        "solutionId":"a9ab025a15e34746aff377837f464b26",
+        "topologicalPic":"",
+        "type":null,
+        "updateTime":"2018-07-26 16:53:14"
+      }
+    ],
+    "risksolutionAuditList":[
+      {
+        "applyBy":"24735178542809088",
+        "applyName":"",
+        "applyTime":null,
+        "auditBy":"24735178542809088",
+        "auditName":"张学连",
+        "auditTime":"2018-07-26 17:00:23",
+        "effect":0,
+        "id":"21a55771869e4c0887e2d8570b27e262",
+        "moduleId":"c7cefcc3174d4fccb6a8a82b995bcc63",
+        "opinion":"在微服务架构中，根据业务来拆分成一个个的服务，服务与服务之间可以相互调用（RPC），在Spring Cloud可以用RestTemplate+Ribbon和Feign来调用。",
+        "remark":"",
+        "result":0,
+        "solutionId":"a9ab025a15e34746aff377837f464b26",
+        "solutionModule":"风险解决方案",
+        "solutionStage":1
+      }
+    ],
+    "demanalysisAuditList":[
+      {
+        "applyBy":"24735178542809088",
+        "applyName":"",
+        "applyTime":null,
+        "auditBy":"24735178542809088",
+        "auditName":"张学连",
+        "auditTime":"2018-07-26 17:00:07",
+        "effect":0,
+        "id":"74caa9d44c3f41e6b150a3e1885ca978",
+        "moduleId":"967db66f843e47f7ae47ee7890a9f366",
+        "opinion":"在微服务架构中",
+        "remark":"",
+        "result":0,
+        "solutionId":"a9ab025a15e34746aff377837f464b26",
+        "solutionModule":"需求分析",
+        "solutionStage":1
+      }
+    ],
+    "overviewList":[
+      {
+        "auditOpinion":"",
+        "buildContent":"在微服务架构中，根据业务来拆分成一个个的服务，服务与服务之间可以相互调用（RPC），在Spring Cloud可以用RestTemplate+Ribbon和Feign来调用。为了保证其高可用，单个服务通常会集群部署。由于网络原因或者自身的原因，服务并不能保证100%可用，如果单个服务出现问题，调用这个服务就会出现线程阻塞，此时若有大量的请求涌入，Servlet容器的线程资源会被消耗完毕，导致服务瘫痪。服务与服务之间的依赖性，故障会传播",
+        "buildGoal":"在微服务架构中，根据业务来拆分成一个个的服务，服务与服务之间可以相互调用（RPC），在Spring Cloud可以用RestTemplate+Ribbon和Feign来调用。为了保证其高可用，单个服务通常会集群部署。由于网络原因或者自身的原因，服务并不能保证100%可用，如果单个服务出现问题，调用这个服务就会出现线程阻塞，此时若有大量的请求涌入，Servlet容器的线程资源会被消耗完毕，导致服务瘫痪。服务与服务之间的依赖性，故障会传播在微服务架构中，根据业务来拆分成一个个的服务，服务与服务之间可以相互调用（RPC），在Spring Cloud可以用RestTemplate+Ribbon和Feign来调用。为了保证其高可用，单个服务通常会集群部署。由于网络原因或者自身的原因，服务并不能保证100%可用，如果单个服务出现问题，调用这个服务就会出现线程阻塞，此时若有大量的请求涌入，Servlet容器的线程资源会被消耗完毕，导致服务瘫痪。服务与服务之间的依赖性，故障会传播",
+        "createTime":"2018-07-26 16:53:03",
+        "id":"706632c86761496397d5baff19ab97c4",
+        "projectBackground":"在微服务架构中，根据业务来拆分成一个个的服务，服务与服务之间可以相互调用（RPC），在Spring Cloud可以用RestTemplate+Ribbon和Feign来调用。为了保证其高可用，单个服务通常会集群部署。由于网络原因或者自身的原因，服务并不能保证100%可用，如果单个服务出现问题，调用这个服务就会出现线程阻塞，此时若有大量的请求涌入，Servlet容器的线程资源会被消耗完毕，导致服务瘫痪。服务与服务之间的依赖性，故障会传播",
+        "remark":"",
+        "solutionId":"a9ab025a15e34746aff377837f464b26",
+        "systemCurrent":"在微服务架构中，根据业务来拆分成一个个的服务，服务与服务之间可以相互调用（RPC），在Spring Cloud可以用RestTemplate+Ribbon和Feign来调用。为了保证其高可用，单个服务通常会集群部署。由于网络原因或者自身的原因，服务并不能保证100%可用，如果单个服务出现问题，调用这个服务就会出现线程阻塞，此时若有大量的请求涌入，Servlet容器的线程资源会被消耗完毕，导致服务瘫痪。服务与服务之间的依赖性，故障会传播",
+        "type":null,
+        "updateTime":"2018-07-26 16:53:03"
+      }
+    ],
+    "applicationdesignList":[
+      {
+        "applicationName":"应用三修改",
+        "applicationOverview":"在微服务架构中，根据业务来拆分成一个个的服务，服务与服务之间可以相互调用（RPC），在Spring Cloud可以用RestTemplate+Ribbon和Feign来调用。为了保证其高可用，单个服务通常会集群部署。由于网络原因或者自身的原因，服务并不能保证100%可用，如果单个服务出现问题，调用这个服务就会出现线程阻塞，此时若有大量的请求涌入，Servlet容器的线程资源会被消耗完毕，导致服务瘫痪。服务与服务之间的依赖性，故障会传播",
+        "applicationPlanning":"在微服务架构中，根据业务来拆分成一个个的服务，服务与服务之间可以相互调用（RPC），在Spring Cloud可以用RestTemplate+Ribbon和Feign来调用。为了保证其高可用，单个服务通常会集群部署。由于网络原因或者自身的原因，服务并不能保证100%可用，如果单个服务出现问题，调用这个服务就会出现线程阻塞，此时若有大量的请求涌入，Servlet容器的线程资源会被消耗完毕，导致服务瘫痪。服务与服务之间的依赖性，故障会传播",
+        "applyLogicdiagram":"在微服务架构中，根据业务来拆分成一个个的服务，服务与服务之间可以相互调用（RPC），在Spring Cloud可以用RestTemplate+Ribbon和Feign来调用。为了保证其高可用，单个服务通常会集群部署。由于网络原因或者自身的原因，服务并不能保证100%可用，如果单个服务出现问题，调用这个服务就会出现线程阻塞，此时若有大量的请求涌入，Servlet容器的线程资源会被消耗完毕，导致服务瘫痪。服务与服务之间的依赖性，故障会传播",
+        "auditOpinion":"",
+        "createTime":"2018-07-27 09:52:52",
+        "frontIntegration":"",
+        "id":"2d3999144e944c42b9727a97e8f9a3ca",
+        "remark":"",
+        "solutionId":"a9ab025a15e34746aff377837f464b26",
+        "type":null,
+        "updateTime":"2018-07-27 09:53:13"
+      },
+      {
+        "applicationName":"应用一",
+        "applicationOverview":"在微服务架构中，根据业务来拆分成一个个的服务，服务与服务之间可以相互调用（RPC），在Spring Cloud可以用RestTemplate+Ribbon和Feign来调用。为了保证其高可用，单个服务通常会集群部署。由于网络原因或者自身的原因，服务并不能保证100%可用，如果单个服务出现问题，调用这个服务就会出现线程阻塞，此时若有大量的请求涌入，Servlet容器的线程资源会被消耗完毕，导致服务瘫痪。服务与服务之间的依赖性，故障会传播",
+        "applicationPlanning":"在微服务架构中，根据业务来拆分成一个个的服务，服务与服务之间可以相互调用（RPC），在Spring Cloud可以用RestTemplate+Ribbon和Feign来调用。为了保证其高可用，单个服务通常会集群部署。由于网络原因或者自身的原因，服务并不能保证100%可用，如果单个服务出现问题，调用这个服务就会出现线程阻塞，此时若有大量的请求涌入，Servlet容器的线程资源会被消耗完毕，导致服务瘫痪。服务与服务之间的依赖性，故障会传播",
+        "applyLogicdiagram":"在微服务架构中，根据业务来拆分成一个个的服务，服务与服务之间可以相互调用（RPC），在Spring Cloud可以用RestTemplate+Ribbon和Feign来调用。为了保证其高可用，单个服务通常会集群部署。由于网络原因或者自身的原因，服务并不能保证100%可用，如果单个服务出现问题，调用这个服务就会出现线程阻塞，此时若有大量的请求涌入，Servlet容器的线程资源会被消耗完毕，导致服务瘫痪。服务与服务之间的依赖性，故障会传播",
+        "auditOpinion":"",
+        "createTime":"2018-07-26 16:54:44",
+        "frontIntegration":"0,",
+        "id":"52c8c46b4b6b4a52b356c518be09e5db",
+        "remark":"",
+        "solutionId":"a9ab025a15e34746aff377837f464b26",
+        "type":null,
+        "updateTime":"2018-07-26 16:54:44"
+      },
+      {
+        "applicationName":"应用二修改",
+        "applicationOverview":"在微服务架构中，根据业务来拆分成一个个的服务，服务与服务之间可以相互调用（RPC），在Spring Cloud可以用RestTemplate+Ribbon和Feign来调用。为了保证其高可用，单个服务通常会集群部署。由于网络原因或者自身的原因，服务并不能保证100%可用，如果单个服务出现问题",
+        "applicationPlanning":"在微服务架构中，根据业务来拆分成一个个的服务，服务与服务之间可以相互调用（RPC），在Spring Cloud可以用RestTemplate+Ribbon和Feign来调用。",
+        "applyLogicdiagram":"在微服务架构中，根据业务来拆分成一个个的服务，服务与服务之间可以相互调用（RPC），在Spring Cloud可以用RestTemplate+Ribbon和Feign来调用。为了保证其高可用，单个服务通常会集群部署。由于网络原因或者自身的原因，服务并不能保证100%可用，如果单个服务出现问题，调用这个服务就会出现线程阻塞，此时若有大量的请求涌入，Servlet容器的线程资源会被消耗完毕，导致服务瘫痪。服务与服务之间的依赖性，故障会传播",
+        "auditOpinion":"",
+        "createTime":"2018-07-26 16:55:01",
+        "frontIntegration":"0,",
+        "id":"7746713a5a254990b37eed72c0f0e0d8",
+        "remark":"",
+        "solutionId":"a9ab025a15e34746aff377837f464b26",
+        "type":null,
+        "updateTime":"2018-07-27 10:24:41"
+      }
+    ],
+    "overviewaAuditList":[
+      {
+        "applyBy":"24735178542809088",
+        "applyName":"",
+        "applyTime":null,
+        "auditBy":"24735178542809088",
+        "auditName":"张学连",
+        "auditTime":"2018-07-26 16:59:57",
+        "effect":0,
+        "id":"4c869aec5b59454393386d2810e5f18f",
+        "moduleId":"706632c86761496397d5baff19ab97c4",
+        "opinion":"在微服务架构中，根据业务来拆分成一个个的服务，服务与服务之间可以相互调用（RPC），在Spring Cloud可以用RestTemplate+Ribbon和Feign来调用。",
+        "remark":"",
+        "result":0,
+        "solutionId":"a9ab025a15e34746aff377837f464b26",
+        "solutionModule":"项目概述",
+        "solutionStage":1
+      }
+    ],
+    "applicationdesignAuditList":[
+      {
+        "applyBy":"24735178542809088",
+        "applyName":"",
+        "applyTime":null,
+        "auditBy":"24735178542809088",
+        "auditName":"张学连",
+        "auditTime":"2018-07-26 17:42:18",
+        "effect":0,
+        "id":"4d9eed3f69174cb9a920c90827567338",
+        "moduleId":"52c8c46b4b6b4a52b356c518be09e5db",
+        "opinion":"111",
+        "remark":"",
+        "result":0,
+        "solutionId":"a9ab025a15e34746aff377837f464b26",
+        "solutionModule":"应用设计",
+        "solutionStage":1
+      },
+      {
+        "applyBy":"24735178542809088",
+        "applyName":"",
+        "applyTime":null,
+        "auditBy":"24735178542809088",
+        "auditName":"张学连",
+        "auditTime":"2018-07-26 17:43:35",
+        "effect":0,
+        "id":"d4ae21de4a4d414e9c75fb4a49eb135f",
+        "moduleId":"7746713a5a254990b37eed72c0f0e0d8",
+        "opinion":"222",
+        "remark":"",
+        "result":0,
+        "solutionId":"a9ab025a15e34746aff377837f464b26",
+        "solutionModule":"应用设计",
+        "solutionStage":1
+      }
+    ],
+    "microserviceAuditList":[
+      {
+        "applyBy":"24735178542809088",
+        "applyName":"",
+        "applyTime":null,
+        "auditBy":"24735178542809088",
+        "auditName":"张学连",
+        "auditTime":"2018-07-26 17:00:14",
+        "effect":0,
+        "id":"27ff57d8cbb34b90a039c878c6f5eb36",
+        "moduleId":"3ee294c5785e49b5b2808ee81247c7eb",
+        "opinion":"在微服务架构中，根据业务来拆分成一个个的服务，服务与服务之间可以相互调用（RPC），在Spring Cloud可以用RestTemplate+Ribbon和Feign来调用。",
+        "remark":"",
+        "result":0,
+        "solutionId":"a9ab025a15e34746aff377837f464b26",
+        "solutionModule":"微服务设计",
+        "solutionStage":1
+      },
+      {
+        "applyBy":"24735178542809088",
+        "applyName":"",
+        "applyTime":null,
+        "auditBy":"24735178542809088",
+        "auditName":"张学连",
+        "auditTime":"2018-07-26 17:00:19",
+        "effect":0,
+        "id":"f768a0e5818444fd995a515a23e61265",
+        "moduleId":"55d75b1c2c4b4a4b91fdb95430903695",
+        "opinion":"在微服务架构中，根据业务来拆分成一个个的服务，服务与服务之间可以相互调用（RPC），在Spring Cloud可以用RestTemplate+Ribbon和Feign来调用。",
+        "remark":"",
+        "result":0,
+        "solutionId":"a9ab025a15e34746aff377837f464b26",
+        "solutionModule":"微服务设计",
+        "solutionStage":1
+      }
+    ]
+  }
+}

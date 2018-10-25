@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>测试</title>
+    <link rel="stylesheet" href="../../lib/layui/css/layui.css">
+    <link rel="stylesheet" href="../../lib/editor/wangEditor.min.css">
+
+    <link rel="stylesheet" href="../../font/iconfont.css">
+    <link rel="stylesheet" href="../pChangeApplicationForm/font/iconfont.css">
+    <link rel="stylesheet" href="./pm_setDoc.css">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="../../lib/formSelects/formSelects-v4.css">
+    <style>
+            .box-main .secLevel:first-child{
+                        display: block;
+            }
+    </style>
+</head>
+<body>
+<!--<div class="box-main">-->
+
+<!--</div>-->
+
+<!--<div id="editor">-->
+    <!--<p>欢迎使用 <b>wangEditor</b> 富文本编辑器</p>-->
+<!--</div>-->
+
+
+<!--<button id="btn">获取内容</button>-->
+
+
+<select xm-select="select-id1">
+
+</select>
+
+
+<!--<select xm-select="select-id2">-->
+    <!--<option value="1">人脸识别服务</option>-->
+    <!--<option value="2">车牌识别服务</option>-->
+    <!--<option value="3">证件识别服务</option>-->
+    <!--<option value="4">扫一扫服务</option>-->
+    <!--<option value="5">证件识别服务</option>-->
+    <!--<option value="6">选择文件</option>-->
+    <!--<option value="7">电子签名</option>-->
+    <!--<option value="8">获取定位</option>-->
+    <!--<option value="9">获取手机状态（NFC、蓝牙、GPS、WIFI等）</option>-->
+    <!--<option value="10">设置手机状态（NFC、蓝牙、GPS、WIFI等）</option>-->
+    <!--<option value="11">获取海拔</option>-->
+    <!--<option value="12">图片压缩</option>-->
+<!--</select>-->
+
+
+<script src="../../js/xhsdk.min.js"></script>
+<script src="../../lib/jquery/jquery.min.js"></script>
+<script src="../../lib/layui/layui.all.js"></script>
+<script src="../../js/commonUrl/commonUrl.js"></script>
+<script src="../../lib/editor/wangEditor.min.js"></script>
+<script src="../../lib/formSelects/formSelects-v4.js"></script>
+<script>
+    var element = layui.element;
+    var layer = layui.layer;
+    var form = layui.form;
+    var laypage = layui.laypage; //分页
+    var upload = layui.upload; //文件上传
+    var formSelects = layui.formSelects;  // 下拉多选
+
+    var xhsdk = new Xhsdk(appID, appSecretKey);
+
+    // 设置网关
+    xhsdk.setGetaWayUrl(GetaWay_url);
+
+    // 设置token
+    xhsdk.setToken(TokenCode);
+
+    // 设置类型
+    xhsdk.setReqType("app");
+
+    xhsdk.setUserInfo(null);
+
+var arr2 = [];
+    getRelySer(1,30)
+    function getRelySer(curr,size) {
+
+        var serviceJson = {
+            "accessToken":accessToken,
+        }
+
+        $(".loading-box1").show();
+        xhsdk.ajax({
+            url: solution +"/microservice/getServerList",
+            // url: "tsconfig.json",
+            type: "POST",
+            contentType: "application/json",
+            dataType: "json",
+            data:JSON.stringify(serviceJson),
+            success: function (res) {
+                console.log(res)
+                // if(res.data==null){
+                //     layer.msg("暂无服务数据");
+                //     return
+                // }
+                if (res.code == 200) {
+                    $(".loading-box1").hide();
+                    $(".allRelySerItem").html("");
+
+                   var  typeArr1 = res.data.resulList;
+
+                   // arr.push(res.data.resulList)
+                    // var typeArr1 = [];
+
+
+                    // for (let i = 0; i < arrc.length; i++) {
+                    //
+                    //     var iftypevalue = arrc[i].type;
+                    //
+                    //     if (flag == 2) {
+                    //
+                    //         if (iftypevalue == 2) {
+                    //
+                    //             typeArr1.push({
+                    //                 "serverName": arrc[i].serverName,
+                    //                 "type": arrc[i].type,
+                    //                 "serverinfoID": arrc[i].serverinfoID
+                    //             });
+                    //
+                    //         }
+                    //
+                    //     } else {
+                    //
+                    //         if (iftypevalue == 3) {
+                    //
+                    //             typeArr1.push({
+                    //                 "serverName": arrc[i].serverName,
+                    //                 "type": arrc[i].type,
+                    //                 "serverinfoID": arrc[i].serverinfoID
+                    //             });
+                    //
+                    //         }
+                    //     }
+                    //
+                    //
+                    // }
+
+
+                    // for(var b = 0;b<parent.relySerArr.length;b++){
+                    //     for(var i=0;i<res.data.length;i++){
+                    //         if(parent.relySerArr[b].curr_id == res.data[i].serverinfoID){
+                    //             res.data[i].isCheck = true;
+                    //         }
+                    //     }
+                    // }
+
+                    for (var i = 0; i < typeArr1.length; i++) {
+                        arr2.push({"name":typeArr1[i].serverName,"value":typeArr1[i].serverinfoID});
+
+
+                        if (!!typeArr1[i].isCheck) {
+                            $(".allRelySerItem").append("<li><input type='checkbox' name='labelItem' lay-skin='primary' title='" + typeArr1[i].serverName + "' value='" + typeArr1[i].serverinfoID + "' lay-filter='relySerItem' checked='true'></li>");
+                            $(".currLabel").append('<li><a href="javscript:#;" id="' + typeArr1[i].serverinfoID + '">' + typeArr1[i].serverName + '</a><i class="layui-icon" onclick="removeLabel(this)">&#x1006;</i></li>');
+                        } else {
+                            $(".allRelySerItem").append("<li><input type='checkbox' name='labelItem' lay-skin='primary' title='" + typeArr1[i].serverName + "' value='" + typeArr1[i].serverinfoID + "' lay-filter='relySerItem'></li>")
+                        }
+                    }
+                    form.render("checkbox", 'all_relyService');
+
+                } else {
+                    parent.parent.errorCode(res.code);
+                    $(".loading-box1").hide();
+                }
+            },
+            error: function (msg) {
+                $(".loading-box1").hide();
+                layer.msg("数据请求错误!");
+                console.log("获取全部服务Error:", msg);
+            }
+        })
+
+
+
+
+    }
+
+
+console.log("----------------",arr2)
+
+    // formSelects.render({
+    //     name: 'select-id1',                              //xm-select的值
+    //     type: 3,                                         // 等效xm-select-type, 选择样式
+    //     max: 3,                                          // 最大多选值
+    //     init: [1],                                       // 初始化选择值, 优先级高
+    //     on: function(data, arr){                         // 监听数据变化
+    //         console.log(data);                           // layui.form.on的data
+    //         console.table(arr);                          // 已选择数据的数组
+    //     },
+    //     maxTips: function(arr, val, max, sel){          //自定义错误提示
+    //         layer.msg(`选择的数据: ${val.name}, 已超出最大选值: ${max}`, {icon: 2});
+    //         console.table(arr);//已选择数据
+    //         console.log(val);  //{name: '北京', val: '1'}
+    //         console.log(max);  //5
+    //         console.log(sel);  //true
+    //     },
+    //     data: {//自定义渲染数据
+    //         arr: [//数组
+    //             {content: '全选', value: 1, sel: true, dis: true},       //如果你这么写, 那就不可选不可删.
+    //             {content: '全不选', value: 2, sel: false, dis: true},    //init的优先级高于sel
+    //             {content: '反选', value: 3, sel: false, dis: false},
+    //             {content: '还有啥', value: 4, sel: false, dis: false},
+    //             {content: '没了吧', value: 5, sel: false, dis: false},
+    //         ],
+    //         name: 'content',//定义name的key, 默认name
+    //         val: 'value',//定义val的key, 默认val
+    //         selected: 'sel',//定义selected的key, 默认selected
+    //         disabled: 'dis',//定义disabled的key, 默认disabled
+    //     }
+    // });
+
+
+    var arr =[
+        {
+            "applicationName":"应用三修改",
+            "applicationOverview":"在微服务架构中，根据业务来拆分成一个个的服务，服务与服务之间可以相互调用（RPC），在Spring Cloud可以用RestTemplate+Ribbon和Feign来调用。为了保证其高可用，单个服务通常会集群部署。由于网络原因或者自身的原因，服务并不能保证100%可用，如果单个服务出现问题，调用这个服务就会出现线程阻塞，此时若有大量的请求涌入，Servlet容器的线程资源会被消耗完毕，导致服务瘫痪。服务与服务之间的依赖性，故障会传播",
+            "applicationPlanning":"在微服务架构中，根据业务来拆分成一个个的服务，服务与服务之间可以相互调用（RPC），在Spring Cloud可以用RestTemplate+Ribbon和Feign来调用。为了保证其高可用，单个服务通常会集群部署。由于网络原因或者自身的原因，服务并不能保证100%可用，如果单个服务出现问题，调用这个服务就会出现线程阻塞，此时若有大量的请求涌入，Servlet容器的线程资源会被消耗完毕，导致服务瘫痪。服务与服务之间的依赖性，故障会传播",
+            "applyLogicdiagram":"在微服务架构中，根据业务来拆分成一个个的服务，服务与服务之间可以相互调用（RPC），在Spring Cloud可以用RestTemplate+Ribbon和Feign来调用。为了保证其高可用，单个服务通常会集群部署。由于网络原因或者自身的原因，服务并不能保证100%可用，如果单个服务出现问题，调用这个服务就会出现线程阻塞，此时若有大量的请求涌入，Servlet容器的线程资源会被消耗完毕，导致服务瘫痪。服务与服务之间的依赖性，故障会传播",
+            "auditOpinion":"",
+            "createTime":"2018-07-27 09:52:52",
+            "frontIntegration":"12,11",
+            "id":"2d3999144e944c42b9727a97e8f9a3ca",
+            "remark":"",
+            "solutionId":"a9ab025a15e34746aff377837f464b26",
+            "type":null,
+            "updateTime":"2018-07-27 09:53:13"
+        },
+        {
+            "applicationName":"应用一",
+            "applicationOverview":"在微服务架构中，根据业务来拆分成一个个的服务，服务与服务之间可以相互调用（RPC），在Spring Cloud可以用RestTemplate+Ribbon和Feign来调用。为了保证其高可用，单个服务通常会集群部署。由于网络原因或者自身的原因，服务并不能保证100%可用，如果单个服务出现问题，调用这个服务就会出现线程阻塞，此时若有大量的请求涌入，Servlet容器的线程资源会被消耗完毕，导致服务瘫痪。服务与服务之间的依赖性，故障会传播",
+            "applicationPlanning":"在微服务架构中，根据业务来拆分成一个个的服务，服务与服务之间可以相互调用（RPC），在Spring Cloud可以用RestTemplate+Ribbon和Feign来调用。为了保证其高可用，单个服务通常会集群部署。由于网络原因或者自身的原因，服务并不能保证100%可用，如果单个服务出现问题，调用这个服务就会出现线程阻塞，此时若有大量的请求涌入，Servlet容器的线程资源会被消耗完毕，导致服务瘫痪。服务与服务之间的依赖性，故障会传播",
+            "applyLogicdiagram":"在微服务架构中，根据业务来拆分成一个个的服务，服务与服务之间可以相互调用（RPC），在Spring Cloud可以用RestTemplate+Ribbon和Feign来调用。为了保证其高可用，单个服务通常会集群部署。由于网络原因或者自身的原因，服务并不能保证100%可用，如果单个服务出现问题，调用这个服务就会出现线程阻塞，此时若有大量的请求涌入，Servlet容器的线程资源会被消耗完毕，导致服务瘫痪。服务与服务之间的依赖性，故障会传播",
+            "auditOpinion":"",
+            "createTime":"2018-07-26 16:54:44",
+            "frontIntegration":"1,2,3",
+            "id":"52c8c46b4b6b4a52b356c518be09e5db",
+            "remark":"",
+            "solutionId":"a9ab025a15e34746aff377837f464b26",
+            "type":null,
+            "updateTime":"2018-07-26 16:54:44"
+        },
+        {
+            "applicationName":"应用二修改",
+            "applicationOverview":"在微服务架构中，根据业务来拆分成一个个的服务，服务与服务之间可以相互调用（RPC），在Spring Cloud可以用RestTemplate+Ribbon和Feign来调用。为了保证其高可用，单个服务通常会集群部署。由于网络原因或者自身的原因，服务并不能保证100%可用，如果单个服务出现问题",
+            "applicationPlanning":"在微服务架构中，根据业务来拆分成一个个的服务，服务与服务之间可以相互调用（RPC），在Spring Cloud可以用RestTemplate+Ribbon和Feign来调用。",
+            "applyLogicdiagram":"在微服务架构中，根据业务来拆分成一个个的服务，服务与服务之间可以相互调用（RPC），在Spring Cloud可以用RestTemplate+Ribbon和Feign来调用。为了保证其高可用，单个服务通常会集群部署。由于网络原因或者自身的原因，服务并不能保证100%可用，如果单个服务出现问题，调用这个服务就会出现线程阻塞，此时若有大量的请求涌入，Servlet容器的线程资源会被消耗完毕，导致服务瘫痪。服务与服务之间的依赖性，故障会传播",
+            "auditOpinion":"",
+            "createTime":"2018-07-26 16:55:01",
+            "frontIntegration":"2",
+            "id":"7746713a5a254990b37eed72c0f0e0d8",
+            "remark":"",
+            "solutionId":"a9ab025a15e34746aff377837f464b26",
+            "type":null,
+            "updateTime":"2018-07-27 10:24:41"
+        }
+    ];
+
+
+    var arr1 = [];
+
+    for(let i=0;i<arr.length;i++){
+            arr1.push({"name":arr[i].applicationName,"value":arr[i].id});
+    }
+
+    formSelects.data('select-id1', 'local', {
+        arr:arr1
+    });
+
+    // formSelects.render('select-id1');
+    formSelects.value('select-id1', ["7746713a5a254990b37eed72c0f0e0d8","7746713a5a254990b37eed72c0f0e0d8"], true);
+
+
+    // layui.formSelects.config('select-id1', {
+    //
+    //     searchUrl: 'http://yapi.demo.qunar.com/mock/9813/layui/search',
+    //     beforeSuccess: function(id, url, searchVal, result){
+    //         //我要把数据外层的code, msg, data去掉
+    //         result = result.data;
+    //         //我要反转name
+    //         $.each(result, function(index, item) {
+    //             item.name && (item.name = item.name.split('').reverse().join(''))
+    //         });
+    //         //然后返回数据
+    //         return result;
+    //     }
+    // });
+
+//
+//        for (var i=0;i<arr.length;i++){
+//            var selcetValue = arr[i].frontIntegration.split(",");
+//            var htmlbox = `<select xm-select="select-id`+i+`">
+//                         <option value="1">人脸识别服务</option>
+//                         <option value="2">车牌识别服务</option>
+//                         <option value="3">证件识别服务</option>
+//                         <option value="4">扫一扫服务</option>
+//                         <option value="5">证件识别服务</option>
+//                         <option value="6">选择文件</option>
+//                         <option value="7">电子签名</option>
+//                         <option value="8">获取定位</option>
+//                         <option value="9">获取手机状态（NFC、蓝牙、GPS、WIFI等）</option>
+//                         <option value="10">设置手机状态（NFC、蓝牙、GPS、WIFI等）</option>
+//                         <option value="11">获取海拔</option>
+//                         <option value="12">图片压缩</option>
+//                         </select>`;
+//
+//            $(".box-main").append(htmlbox);
+//            formSelects.render('select-id'+i+'');
+//            formSelects.value('select-id'+i+'', selcetValue,true);
+//
+//
+// console.log(selcetValue)
+//
+//            // var htmlbox  = '<div class="secLevel layui-form" style="display: none">';
+//            // htmlbox += '<div class="pj-item-body-top" style="margin-top:30px;">';
+//            // htmlbox += '<div class="deploy">' ;
+//            // htmlbox += '  <div class="layui-input-inline option-left">';
+//            // htmlbox += '<div class="layui-input-block app-service-box" style="width: 500px">';
+//            // htmlbox += '<div>'+arr[i].applicationName+'</div>';
+//            // htmlbox += '   </div>';
+//            // htmlbox += '      </div>' ;
+//            // htmlbox += '   </div>' ;
+//            // htmlbox += ' </div>' ;
+//            // htmlbox += '</div>';
+//            // $(".box-main").append(htmlbox);
+//            // form.render()
+//
+// //         var apphtml = `<div class="secLevel layui-form">
+// //     <div class="pj-item-body-top" style="margin-top:30px;">
+// //         <div class="deploy">
+// //             <p class="editTitle">${arr[i].applicationName}</p>
+// //             <div class="layui-input-inline option-left">
+// //                 <div class="layui-input-block app-service-box" style="width: 500px">
+// //                     <input type="checkbox" name="test" title="基础技术服务" value="1" lay-filter="qdCheckbox">
+// //                     <input type="checkbox" name="test" title="通用业务服务设计" value="2" lay-filter="qdCheckbox">
+// //                     <input type="checkbox" name="test" title="应用服务设计" value="3" lay-filter="qdCheckbox">
+// //                 </div>
+// //             </div>
+// //         </div>
+// //     </div>
+// // </div>
+//
+//
+//
+//            // $(".box-main").append(apphtml);
+//
+//            // // var boxes = document.getElementsByName("test");
+//            //
+//            // var boxes = $(".secLevel input");
+//            //
+//            // var valuearr = arr[i].frontIntegration.split(",");
+//            //
+//            // console.log(valuearr)
+//            // for (var k=0;k<boxes.length;k++){
+//            //
+//            //     for (var j=0;j<valuearr.length;j++){
+//            //         if(boxes[k].value == valuearr[j]){
+//            //             boxes[k].checked = true;
+//            //             break;
+//            //         }
+//            //
+//            //     }
+//            //     console.log("执行次数")
+//            // }
+//
+//
+//    }
+
+
+    //    var divnumber =  $(".box-main").find(".secLevel")
+    // var a = 0;
+    // setInterval(function () {
+    //     a++;
+    //     $.each(divnumber,function (i,n) {
+    //         if(a>i){
+    //             $(this).css("display","block").siblings(".secLevel").css("display","none");
+    //         }
+    //
+    //     })
+    //
+    // },3000)
+
+
+
+</script>
+
+<!--<script>-->
+
+    <!--var xhsdk = new Xhsdk(appID, appSecretKey);-->
+
+    <!--// 设置网关-->
+    <!--xhsdk.setGetaWayUrl(GetaWay_url);-->
+
+    <!--// 设置token-->
+    <!--xhsdk.setToken(TokenCode);-->
+
+    <!--// 设置类型-->
+    <!--xhsdk.setReqType("app");-->
+
+    <!--xhsdk.setUserInfo(null);-->
+
+
+    <!--var E = window.wangEditor-->
+    <!--var editor = new E('#editor')-->
+    <!--// 或者 var editor = new E( document.getElementById('editor') )-->
+    <!--// editor.customConfig.uploadImgShowBase64 = true   // 使用 base64 保存图片-->
+    <!--// 配置自定义参数（举例）-->
+    <!--// editor.customConfig.uploadImgParams  = {-->
+    <!--//     fileList: '',-->
+    <!--//     userId: '454654465',-->
+    <!--//     userName: 'wangfupeng',-->
+    <!--//     terminalType: '1',-->
+    <!--//     organization: '464454654',-->
+    <!--//     organizationId: '464654646',-->
+    <!--//     fileName: 'wangfupeng1988',-->
+    <!--// };-->
+    <!--//-->
+    <!--// // 设置 headers（举例）-->
+    <!--// editor.customConfig.uploadImgHeaders = {-->
+    <!--//     'AccessToken' : accessToken,-->
+    <!--//     'ApplyID' : "ed2c076f86834ee0bc3dfa54d0f2daf7",-->
+    <!--//     'SecretKey' : "D82AAE335BDFB4FDDB80BDDA20B064C6",-->
+    <!--//     'requestType' : "app",-->
+    <!--//     'mimeType': "multipart/form-data",-->
+    <!--// };-->
+    <!--// editor.customConfig.uploadImgServer = "http://172.29.3.76:9238/szga/xinghuo-apaas-s3fileservice/s3fileservice/s3/file/uploadByIStream";-->
+
+    <!--// editor.customConfig.hideLinkImg = true;-->
+    <!--// // editor.customConfig.uploadImgMaxSize = 3 * 1024 * 1024;-->
+    <!--// // editor.customConfig.uploadImgMaxLength = 5;-->
+    <!--// // editor.customConfig.uploadFileName = 'fileList';-->
+    <!--// editor.customConfig.uploadImgHooks = {-->
+    <!--//     customInsert: function (insertImg, result, editor) {-->
+    <!--//         // 图片上传并返回结果，自定义插入图片的事件（而不是编辑器自动插入图片！！！）-->
+    <!--//         // insertImg 是插入图片的函数，editor 是编辑器对象，result 是服务器端返回的结果-->
+    <!--//         console.log(result)-->
+    <!--//         // 举例：假如上传图片成功后，服务器端返回的是 {url:'....'} 这种格式，即可这样插入图片：-->
+    <!--//         var url =result.data;-->
+    <!--//         insertImg(url);-->
+    <!--//-->
+    <!--//         // result 必须是一个 JSON 格式字符串！！！否则报错-->
+    <!--//     }-->
+    <!--// }-->
+    <!--var filecon = null;-->
+    <!--editor.customConfig.customUploadImg = function (files, insert) {-->
+        <!--// files 是 input 中选中的文件列表-->
+        <!--// insert 是获取图片 url 后，插入到编辑器的方法-->
+        <!--filecon = files[0];-->
+        <!--console.log("&#45;&#45;&ndash;&gt;",filecon);-->
+            <!--// fileimg = $('#project_Enclosure')[0].files[0];-->
+            <!--//   console.log("&#45;&#45;&ndash;&gt;",fileListCon);-->
+            <!--var formData = new FormData();-->
+            <!--formData.append("file",filecon);-->
+            <!--formData.append("serviceID","f3295b7e695145509ce6f55de679f1e1");-->
+
+
+            <!--xhsdk.ajax({-->
+                <!--url: "xinghuo-apaas-fileservice/breakMultiUploads",-->
+                <!--type: "POST",-->
+                <!--contentType: false,-->
+                <!--processData: false,-->
+                <!--mimeType: "multipart/form-data",-->
+                <!--data: formData,-->
+                <!--success: function (res) {-->
+
+                    <!--var res = JSON.parse(res);-->
+
+                    <!--if (res.code == 200) {-->
+                                <!--var  fileurlCon =  res.result[0].data.fileUrl-->
+                        <!--insert(fileurlCon)-->
+                    <!--} else {-->
+
+                        <!--layer.msg("图片上传失败，请重新上传！");-->
+
+                        <!--return-->
+
+                    <!--}-->
+                <!--},-->
+                <!--error: function (msg) {-->
+                    <!--loadingTip.hide();-->
+                    <!--layer.msg("请求出现错误!!");-->
+                    <!--console.log("Error:", msg);-->
+                <!--}-->
+            <!--});-->
+
+
+
+        <!--// 上传代码返回结果之后，将图片插入到编辑器中-->
+
+    <!--}-->
+
+
+
+    <!--editor.create();-->
+
+    <!--// editor.txt.html('<p>用 JS 设置的内容</p>');-->
+    <!--//-->
+    <!--// $("#btn").click(function () {-->
+    <!--//     console.log(editor.txt.html())-->
+    <!--// })-->
+
+<!--</script>-->
+</body>
+</html>

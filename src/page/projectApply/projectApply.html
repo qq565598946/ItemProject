@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>项目立项申请</title>
+    <link rel="stylesheet" type="text/css" href="../../lib/layui/css/layui.css" />
+    <link rel="stylesheet" href="../pChangeApplicationForm/font/iconfont.css">
+    <link rel="stylesheet" type="text/css" href="../../css/projectManage/projectManagement.css" />
+    <link rel="stylesheet" type="text/css" href="projectApply.css" />
+    <style>
+        .layui-laypage .layui-laypage-curr .layui-laypage-em {
+            position: absolute;
+            left: -1px;
+            top: -1px;
+            padding: 1px;
+            width: 100%;
+            height: 100%;
+            background-color: #295596;
+        }
+        .layui-container {
+            position: relative;
+            margin: 0 auto;
+            /* padding: 0 15px; */
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+
+<body style="background:#295596;">
+<div class="projectApply">
+    <div class="loading-box" style="display: none"><img src="../../img/loading.gif" alt="加载中..."></div>
+    <div class="public_title">
+        <!--<div>项目管理 </div>-->
+    </div>
+    <div class="layui-container" style="padding: 0px">
+        <form class="layui-form">
+        <div class="layui-row projectProgramme_box projectApply_box" style="height: 100%;position: fixed">
+            <!--分配人员-->
+            <div class="layui-col-md2" style="margin-left:0px">
+                <div class="popUpbox" style="display: none;">
+                    <div class="editContent">
+                        <p><span>分配负责人</span></p>
+                        <div class="left-right-box">
+                            <div class="left-ft-box layui-form">
+                                <div class="layui-input-inline" style="width:100%">
+                                    <input type="text" name="project_Name" id="project_Responsible"  autocomplete="off" class="layui-input" >
+                                    <i class="layui-icon layui-icon-search right-box-search"></i>
+                                </div>
+                                    <div class="ry-option" >
+                                        <span class="ry-label">人员:</span>
+                                        <div class="layui-form-item" pane="" id="Personnel">
+                                            <!--<div class="option-checkbox">-->
+                                                <!--<input type="checkbox" name="like1[write]" lay-skin="primary" title="张笑天"  value="张笑天" lay-filter="staffCheckbox">-->
+                                            <!--</div>-->
+                                            <!--<div class="option-checkbox">-->
+                                                <!--<input type="checkbox" name="like1[write]" lay-skin="primary" title="李思咦" value="李思咦" lay-filter="staffCheckbox">-->
+                                            <!--</div>-->
+                                            <!--<div class="option-checkbox">-->
+                                                <!--<input type="checkbox" name="like1[write]" lay-skin="primary" title="李思咦" value="李思咦" lay-filter="staffCheckbox">-->
+                                            <!--</div>-->
+                                            <!--<div class="option-checkbox">-->
+                                                <!--<input type="checkbox" name="like1[write]" lay-skin="primary" title="李思咦" value="李思咦" lay-filter="staffCheckbox">-->
+                                            <!--</div>-->
+
+                                        </div>
+                                        <div id="page-button"></div>
+                                    </div>
+
+                            </div>
+                            <!--<div class="right-ft-box">-->
+                                <!--<div class="header-ft-box">-->
+                                    <!--<span>已选</span><span>（0）</span><span>清空</span>-->
+                                <!--</div>-->
+                                <!--<div class="checkbox-box">-->
+                                    <!--<ul>-->
+                                    <!--</ul>-->
+                                <!--</div>-->
+                            <!--</div>-->
+                        </div>
+                        <div class="btn-group">
+                            <div class="layui-btn layui-btn-primary getDocData">保存</div>
+                            <div class="layui-btn layui-btn-primary cancelEditor">取消</div>
+                        </div>
+                    </div>
+                </div>
+                <p class="itemDes"> 项目立项申请<br /><span>（添加项目）</span></p>
+
+                <ul class="ProgrammeList">
+                    <li class="layui-this">
+                        <span><i class="iconfont icon-xiangmuguanli"></i>  项目名称 </span>
+                        <div class="box-veirfy"></div>
+                        <!--<span class="correct"><i class="layui-icon-ok layui-icon" style="margin:-5px;font-size: 18px">&#xe605;</i></span>-->
+                    </li>
+
+                    <li >
+                        <span><i class="iconfont icon-xiangmufanwei"></i> 项目编码</span>
+                        <div class="box-veirfy"></div>
+                        <!--<span class="font-red"><i class="iconfont icon-bitian" style="margin:-5px"></i><span>必填</span></span>-->
+                    </li>
+                    <li >
+                        <span><i class="iconfont icon-quxian"></i> 项目背景</span>
+                        <div class="box-veirfy"></div>
+                        <!--<span class="font-red"><i class="iconfont icon-bitian" style="margin:-5px"></i><span>必填</span></span>-->
+                    </li>
+                    <li>
+                        <span><i class="iconfont icon-guanlianfujian"></i> 相关附件</span>
+                        <div class="box-veirfy"></div>
+                        <!--<span class="font-red"><i class="iconfont icon-bitian" style="margin:-5px"></i><span>必填</span></span>-->
+                    </li>
+                    <li >
+                        <span><i class="iconfont icon-fuzerenicon"></i> 建设单位</span>
+                        <div class="box-veirfy"></div>
+                        <!--<span class="font-red"><i class="iconfont icon-bitian" style="margin:-5px"></i><span>必填</span></span>-->
+                    </li>
+                    <li >
+                        <span><i class="iconfont icon-fuzerenicon"></i> 项目负责人</span>
+                        <div class="box-veirfy"></div>
+                        <!--<span class="font-red"><i class="iconfont icon-bitian" style="margin:-5px"></i><span>必填</span></span>-->
+                    </li>
+                </ul>
+                <div class="submit-box">
+                    <!--<div class="submitbutton" lay-submit="" lay-filter="sumbitApply" id="submit">提交</div>-->
+                    <!--<div class="submitbutton" lay-submit="" lay-filter="submitCheck" id="save">保存</div>-->
+                </div>
+            </div>
+            <div class="layui-col-md10">
+                <span class="right-sp"><span style="color:#c2c2c2;">项目列表 一 </span> <span style="font-weight:500">添加项目</span></span>
+
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">
+                            <div class="title-background">项目名称:</div>
+                        </label>
+                        <div style="clear:both;">
+                            <div class="layui-input-inline" style="width:100%">
+                                 <input type="text" name="project_Name" id="project_Name" lay-verify="project_Name" autocomplete="off" class="layui-input verify-value" >
+                            </div>
+                        </div>
+                    </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">
+                        <div class="title-background">项目编码:</div>
+                    </label>
+                    <div style="clear:both;">
+                        <div class="layui-input-inline" style="width:100%">
+                            <input type="text" name="project_Name" id="project_code" lay-verify="project_code" autocomplete="off" class="layui-input verify-value" >
+                        </div>
+                    </div>
+                </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">
+                            <div class="title-background">项目背景:</div>
+                        </label>
+                            <textarea placeholder="请输入背景" class="layui-textarea verify-value" id="project_Background" lay-verify="project_Background"></textarea>
+                    </div>
+                    <!--<div class="layui-form-item">-->
+                        <!--<label class="layui-form-label">-->
+                            <!--<div class="title-background">项目范围:</div>-->
+                        <!--</label>-->
+                        <!--<textarea placeholder="请输入范围" class="layui-textarea verify-value" id="project_Range"></textarea>-->
+                    <!--</div>-->
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">
+                            <div class="title-background">项目附件:</div>
+                        </label>
+                        <div style="clear:both" class="file-box">
+                            <div class="layui-upload">
+                                <button type="button" class="layui-btn layui-btn-primary Enclosure_btn">
+                                    <i class="layui-icon">&#xe67c;</i><span class="file-name">上传附件</span>
+                                    <input type="file"  class="enclosure verify-value" name="file" id="project_Enclosure">
+                                    <div class="fileUrl" style="display: none"></div>
+                                </button>
+                                <!--<button type="button" class="layui-btn layui-btn-normal" id="testList">选择多文件</button>-->
+                                <div class="layui-upload-list" style="display:none">
+                                    <table class="layui-table">
+                                        <thead>
+                                        <tr><th>文件名</th>
+                                            <th>大小</th>
+                                            <th>状态</th>
+                                            <th>操作</th>
+                                        </tr></thead>
+                                        <tbody id="demoList"></tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <!--<div class="file-box"></div>-->
+                            <div class="updata-box">
+                                <button type="button" class="layui-btn" id="testListAction" style="display: none">开始上传</button>
+                            </div>
+                        </div>
+                    </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">
+                        <div class="title-background">建设单位:</div>
+                    </label>
+                    <div style="clear: both;">
+                        <!--<div class="layui-input-inline" style="width:280px">-->
+                        <!--<input type="text" name="project_Name" id="project_Responsible" lay-verify="required" autocomplete="off" class="layui-input verify-value" >-->
+                        <!--</div>-->
+                        <div class="layui-inline" style="position:relative">
+                            <!--<label class="fp">分配开发人员*</label>-->
+                            <div class="layui-input-inline" style="width:300px">
+                                <input type="tel" name="phone" lay-verify="required" autocomplete="off" disabled class="layui-input verify-value" id="buildUnit" >
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">
+                            <div class="title-background">项目负责人:</div>
+                        </label>
+                        <div style="clear: both;">
+                            <!--<div class="layui-input-inline" style="width:280px">-->
+                                <!--<input type="text" name="project_Name" id="project_Responsible" lay-verify="required" autocomplete="off" class="layui-input verify-value" >-->
+                            <!--</div>-->
+                            <div class="layui-inline" style="position:relative">
+                                <!--<label class="fp">分配开发人员*</label>-->
+                                <div class="layui-input-inline" style="width:300px">
+                                    <input type="tel" name="phone" lay-verify="required" autocomplete="off" disabled class="layui-input verify-value" id="staffvalue" >
+                                    <!--<span class="box-right-renyuan"><i class="iconfont icon-renyuanzengjia"></i></span>-->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+           </div>
+        </div>
+        </form>
+     </div>
+</div>
+
+<script src="../../js/xhsdk.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../lib/jquery/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../lib/layui/layui.all.js"></script>
+<script src="../../js/commonUrl/commonUrl.js"></script>
+<script src="../../lib/documentMD5/browser-md5-file.min.js"></script>
+<script src="projectApply.js"></script>
+</body>
+
+</html>

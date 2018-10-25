@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="style.css">
+    <title>Title</title>
+    <style>
+            .mainbox{
+                max-width: 1200px;
+                margin: 0 auto;
+                display: flex;
+                display: -webkit-flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                border: 1px solid #0e9aef;
+                justify-content: space-between;
+
+            }
+            .mainbox .content{
+                width: 235px;
+                height: 220px;
+                background: #CCCCCC;
+                margin: 0px 0px 5px 0px;
+
+            }
+    </style>
+</head>
+<body>
+        <div class="mainbox">
+                    <!--<div class="content"></div>-->
+                    <!--<div class="content"></div>-->
+                    <!--<div class="content"></div>-->
+                    <!--<div class="content"></div>-->
+                    <!--<div class="content"></div>-->
+
+
+
+
+        </div>
+<script>
+    const moudule = (function () {
+                        let  model = 100;
+                          const m1 = () => {
+                                    console.log("m1",model)
+
+                          }
+                          const  m2 = () =>{
+                                console.log("m2",model)
+                          }
+
+                          return {
+                                f1:m1,
+                                f2:m2
+                          }
+
+    })();
+
+        moudule.f2();
+        moudule.f1();
+
+
+
+</script>
+</body>
+</html>
